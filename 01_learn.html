@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>React Sandbox</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="root"></div>
+</body>
+<!-- This setup is not suitable for production. -->
+<!-- Only use it in development! -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.0/dist/es-module-shims.js"></script>
+<!-- The import map allows you to control the behavior of module imports in your application. -->
+<script type="importmap">
+	{
+		"imports": {
+			"react": "https://esm.sh/react?dev",
+			"react-dom/client": "https://esm.sh/react-dom/client?dev"
+		}
+	}
+</script>
+<!-- The type="module" attribute is necessary to load ES modules in the browser. -->
+<script type="text/babel" data-type="module">
+	
+	import React, { StrictMode } from 'react';	
+	import { createRoot } from 'react-dom/client'; 
+
+	import { useState } from 'react'; //화면 업데이트
+
+	function Greeting({ name }) {
+		const isLoggedIn = true; 
+		return (
+			<div>
+				{/* 조건부 렌더링 */}
+				{isLoggedIn ? <p>Welcome, {name}!</p> : <p>Please log in</p>} 					
+			</div>
+		);
+	}
+	let App = function App() {
+		return <Greeting name="IU" />
+	}
+
+	//
+	
+	//이벤트 응답하기, 화면 업데이트
+	function MyButton() {		
+		const handleClick = () => {
+			document.querySelector('.product-2').classList.toggle('active');
+			setCount(count + 1);
+		};
+		const [count, setCount] = useState(0);
+
+		return (
+			<div>				
+				{/* 이벤트에 응답하기 */}
+				<button onClick={handleClick}>
+					Clicked {count} times
+				</button>
+			</div>
+		);
+	}
+	let MyApp = function MyApp() {
+		return (
+			<div>
+				<App />				
+				<div className='btn-area'>
+					<MyButton />
+					<MyButton />
+				</div>
+			</div>
+		);
+	}
+
+	const user = {
+		name: 'Hedy Lamarr',
+		imageUrl: '280.webp',
+	}
+	let ProfileApp = function profileApp() {
+		return (
+			<div>
+				<h1>{user.name}</h1>
+				<img className="avatar" src={user.imageUrl} alt={user.name}  />
+			</div>
+		);
+	}
+
+	//리스트 렌더링
+	const products = [
+		{ title: 'Cabbage', id: 1},
+		{ title: 'Garlic', id: 2},
+		{ title: 'Apple', id: 3},
+	];
+
+	const listItems = products.map((product) =>
+		<li key={product.id} className={`product product-${product.id}`}>{product.title}</li>
+	);
+
+	let ListApp = function ListApp() {
+		return (
+			<ul>{listItems}</ul>
+		);
+	}
+
+
+	const root = createRoot(document.getElementById('root'));
+	root.render(
+		<StrictMode>					
+			<MyApp />
+			<ProfileApp />
+			<ListApp />
+		</StrictMode>
+	);
+
+</script>
+
+</html>
