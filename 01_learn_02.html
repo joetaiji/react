@@ -28,26 +28,34 @@
 	import React, { StrictMode } from 'react';	
 	import { createRoot } from 'react-dom/client'; 
 
+	
+	const user = {
+		name: 'IU',
+		imageUrl: '280.webp',		
+	};
+	const isLoggedIn = false; 
 
-	function MyButton() {
+	export default function Profile() {
 		return (
-			<button>I'm a button</button>
+			<>
+			{/* 조건부 렌더링 */}
+			{ isLoggedIn ? (
+				<div>
+					<h1>{user.name}</h1>
+					<img className='avatar' src={user.imageUrl} alt={user.name} />
+				</div>
+			) : (
+				<div>Please log in</div>
+			)}
+			</>
 		);
-	}
-	export default function MyApp() {
-		return (
-			<div>
-				<h1>Welcome to my app</h1>
-				<MyButton />
-			</div>
-		)
 	}
 
 
 	const root = createRoot(document.getElementById('root'));
 	root.render(
-		<StrictMode>					
-			<MyApp />
+		<StrictMode>		
+			<Profile />
 		</StrictMode>
 	);
 

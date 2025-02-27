@@ -28,26 +28,25 @@
 	import React, { StrictMode } from 'react';	
 	import { createRoot } from 'react-dom/client'; 
 
+	const products = [
+		{ title: 'Cabbage', isFruit: false, id: 1 },
+		{ title: 'Garlic', isFruit: false, id: 2 },
+		{ title: 'Apple', isFruit: true, id: 3 },
+	];
 
-	function MyButton() {
+	export default function ShoppingList() {
+		const listItems = products.map(product => (
+			<li key={product.id} className={product.isFruit ? 'active' : ''} >{product.title}</li>
+		));
+
 		return (
-			<button>I'm a button</button>
+			<ul>{listItems}</ul>
 		);
 	}
-	export default function MyApp() {
-		return (
-			<div>
-				<h1>Welcome to my app</h1>
-				<MyButton />
-			</div>
-		)
-	}
-
-
 	const root = createRoot(document.getElementById('root'));
 	root.render(
 		<StrictMode>					
-			<MyApp />
+			<ShoppingList />
 		</StrictMode>
 	);
 
