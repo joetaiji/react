@@ -1,8 +1,39 @@
 import React from 'react';
-import Gallery from './Gallery';
+import Gallery from './Gallery.js';
 
-export default function App() {
+function Card({ children }) {
   return (
-    <Gallery />
+	<div className='card'>
+	  {children}
+	</div>
+  );
+}
+
+export default function Profile() {	
+  return (
+	<Card>
+	  <Gallery 
+		person={{
+			name: 'Katsuko Saruhashi',
+			imageId: 'YfeOqp2',
+		}} 
+		size={100} 
+	  />	  
+	  <Gallery 
+		person={{
+			name: 'Gregorio Y. Zara',
+			imageId: '7vQD0fP',
+		}} 
+		size={50} 
+	  />	 
+	  <Gallery 
+		person={{
+			name: 'Lin Lanying',
+			imageId: '1bX5QH6',
+		}} 
+		size={50} 
+	  />	 
+	  	  
+	</Card>
   );
 }

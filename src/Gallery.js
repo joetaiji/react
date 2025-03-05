@@ -1,13 +1,14 @@
 import React from 'react';
-import Profile from './Profile';
+import { getImageUrl } from './Util.js';
 
-export default function Gallery() {
+export default function Gallery({ person, size}) {
   return (
-    <section>
-      <h1>Amazing scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-    </section>
+    <img
+	  src={getImageUrl(person)}
+	  alt={person.name}
+	  width={size}
+	  height={size}
+	  className='avatar'
+	/>
   );
 }
