@@ -1,0 +1,144 @@
+@import "../mixin";
+
+/* ===========================================================================================
+form
+=========================================================================================== */
+
+.form-control { border: 1px solid var(--gray-10); background: var(--white); border-radius: 0.8rem; padding: .5rem 1rem; min-width: 8.4rem; field-sizing: content;  color: var(--gray-90); outline:1px solid transparent; transition: 0.2s; outline-offset: -1px; cursor:pointer; 
+	&.md { height: 4.8rem; }
+	&::placeholder { color: var(--gray-40); font-size: 1.3rem; letter-spacing: -1px;}
+	&:hover { background: var(--primary-5); }
+	&:focus { background: var(--white); outline: 1px solid var(--primary-30);  }
+	&:disabled { color: var(--gray-20); background: var(--gray-10);}
+	&:read-only:focus { background: var(--white); outline:0;}
+	&-unit { @include flex(.5rem, center);
+		.form-control { flex: 1;}
+	}
+	&[rows="5"] {height: 10rem;}
+}
+
+.form {
+	.label { word-break: keep-all; @include flex(.5rem, center, null, inline); font-weight: 700;
+		.ic-star { color: var(--point); font-weight: 700;}
+	}
+	input[type=text], input[type=password], input[type=date], input[type=email], input[type=url], input[type=number], select, textarea {
+		display: inline-block; padding: .6rem 1.2rem; height: 4.8rem; border: 1px solid var(--gray-30); border-radius: 0.6rem; transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; 
+
+		&:focus { background: var(--primary-5); border-color: var(--primary-30); box-shadow: 2px 1px .7rem #B2B2B940; }
+		//&:invalid { border-color: var(--point); } 
+	}
+	.form-pw { position: relative; }
+	.btn-pw-view {
+		position: absolute; right: 1rem; top: 50%; transform: translate(0, -50%); display: flex;
+
+		&.active i::before { content: "\ecb7" }
+	}
+	[disabled], [readonly] { background-color: rgba(230, 230, 230, 0.3); }
+	select {
+		width: max-content; min-width: 10rem; /* background: var(--white) url(#{$url}/board/select_arrow.gif) right .75rem center no-repeat; appearance: none; */ padding-right: 2rem;
+
+		&::-ms-expand { display: none; }
+	}
+	textarea { height: auto; resize: vertical; padding-top:1.3rem; padding-bottom: 1.3rem; }
+	.textarea-foot {
+		@include flex($ai: center); margin-top: 1rem; font-size: 1.5rem; color: var(--gray-60);
+
+		.text-maxsize { font-size: 1.5rem; margin-left: auto; }
+	}		
+}
+.form-inline { @include flex(1.6rem, center, null, inline); flex-wrap: wrap; }
+.form-group {
+	@include flex(.8rem, $ai: center);
+	> .form-item { flex: 1; width: 1%; max-width: fit-content; }
+}
+.form-row {
+	@include flex(.8rem);
+
+	> .form-item { flex: 1; width: 1%; }
+}
+.agree-radio { @include flex(3rem, $jc:center); margin-top: 3rem;}
+.error {
+	font-size: 1.5rem; color: var(--gray-60);
+
+	&:first-of-type { margin-top: 0.7rem; }
+}
+.invalid-feedback {
+	color: var(--point-30); @include flex(.4rem, $fd:inline); margin-left: 2rem; padding: 1rem 1.5rem; border: 1px solid var(--point-30); border-radius: 0.4rem;
+	&::before { content: "\eca0"; font-family: 'remixicon';}
+}
+/* .required { color: var(--point); } */
+/* 
+.noinput { padding-top: 1.5rem;padding-bottom: 1.5rem; } 
+*/
+/* 체크박스, 라디오버튼 */
+$size : 2rem;
+.custom-input:has(input[type=radio], input[type=checkbox]) {
+	position: relative; padding-left: calc($size + .5rem); cursor: pointer; line-height: normal;
+	label { cursor:pointer;}
+	input[type=radio], input[type=checkbox] { position: absolute; opacity: 0; cursor:pointer;}
+
+	&::before, &::after { content: ""; display: block; position: absolute; left: 0; top: 0; width: $size; height: $size; border: 1px solid var(--gray-40); border-radius: 0.2rem; }
+}
+.custom-input:has(input[type=checkbox])::after { content: "\eb7a"; text-align: center; background-color: var(--gray-80); border: 1px solid var(--gray-80); color: var(--white); font-size: 1.5rem; font-family: var(--icon); opacity: 0; line-height: $size; }
+
+input[type=radio]+label {
+	&::before { border-radius: 50%; background: var(--white); }
+	&::after { opacity: 0; width: 1.2rem; height: 1.2rem; background-color: var(--primary); border-radius: 50%; left: .5rem; top: .5rem; z-index: 2; }
+}
+
+.custom-input:has(input:focus)::before { border: 2px solid var(--gray-80); }
+.custom-input:has(input:checked)::after { opacity: 1; border-color: var(--gray-80); }
+.custom-input:has(input:disabled)::before { background: var(--gray-20);}
+
+/* .custom-input {
+	position: relative;
+
+	input[type=radio], input[type=checkbox] {
+		position: absolute; opacity: 0;
+
+		+label {
+			position: relative; padding-left: calc($size + .5rem); cursor: pointer;
+
+			&::before, &::after { content: ""; display: block; position: absolute; left: 0; top: 0; width: $size; height: $size; border: 1px solid var(--gray-40); }
+		}
+	}
+	input[type=radio]+label {
+		&::before { border-radius: 50%; background: var(--white); }
+		&::after { opacity: 0; width: 1.2rem; height: 1.2rem; background-color: var(--primary); border-radius: 50%; left: .5rem; top: .5rem; z-index: 2; }
+	}
+	input[type=checkbox]+label::after { content: "\eb7a"; text-align: center; background-color: var(--primary); border: 1px solid var(--primary); color: var(--white); font-size: 1.5rem; font-family: var(--icon); z-index: 2; opacity: 0; line-height: $size; }
+	input:focus+label::before { border: 2px solid var(--primary); }
+	input:checked+label::after { opacity: 1; border-color: var(--primary); }
+	input:disabled+label::before { background: var(--gray-20);}
+} */
+
+ 
+
+.file { @include flex(3rem); padding: 2rem; background: var(--gray-5); border-bottom: 1px solid var(--gray-40);
+	&-input{ position: relative;	
+		[type="file"] { position: absolute; right: 0; z-index: -1; width: 12rem; height: 100%; padding: 0; overflow: hidden; border: 0 none; opacity: 0;
+			+ label { cursor: pointer; }
+			&:focus + label {  border: 2px solid var(--primary); }
+		}
+		.file-name { flex: 1; }
+	}
+	&-add { @include flex(1rem); flex-direction: column; }
+	&-label { font-weight: 600; }
+	&-list { @include flex(1rem); flex: 1; min-width: 1%; flex-direction: column;
+		li { @include flex(1rem, center, space-between); 				
+			.link { @include flex(1rem);}
+		}
+	}
+	&-down { @include flex(1rem, center); flex: 1; min-width: 1%; width: 100%;
+		.text { @include ellipsis;}
+	}
+	.link { margin-left: auto;}
+	&-size { font-size: 1.2rem; color: var(--gray-70);}
+	&-delete i { color: var(--point); }
+}
+
+@include media($pad) {
+
+}
+@include media($mobile) {
+}

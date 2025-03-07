@@ -1,0 +1,54 @@
+@import "mixin";
+
+/* =======================================================================================
+로그인
+======================================================================================= */
+
+.login { width: 100%; height: 100vh; background-repeat: no-repeat; background-size: cover;
+	&-container { width: 48rem; border-radius: 2rem; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(5rem); @include pos(lt, 50%, 50%); padding: 6rem; color: var(--white);}
+	&-head { font-size: 2.2rem; color: inherit; @include flex(1rem, center, center); margin-bottom: 4rem;}
+	&-form { @include flex(1rem, $fd:column);
+		.form-row {  position: relative; 
+			label { font-size: 1.5rem; position: absolute; left: 2rem; top: 1.7rem; z-index: -1; transition: 0.2s ease;
+				&:has(+input:focus){ top: -.8rem; font-size: 1.3rem; z-index: 1; text-shadow: 2px 2px rgb(0,0,0);}
+				&:has(+input:not(:placeholder-shown)) { display: none;}
+			}
+			input { background:transparent; border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.30); width: 100%; padding: 1.7rem 2rem; outline: 0;}			
+			.btn-pw-view { @include pos(rt, 2rem, 50%); opacity: 0.3; transition: 0.2s;
+				&.active { opacity: 0.6;
+					i::before { content: "\ecb4";}
+				}
+			}
+		}
+		.btn-login { height: 6rem; border-radius: 10px; position: relative; overflow: hidden;
+			&::before { content: ''; display: block; position: absolute; left: 0; top: 0; width: 200%; height: 100%; background: linear-gradient(90deg, var(--secondary-30) -10.7%, var(--primary-30) 50%, var(--secondary-30) 100%); transition: 0.3s; z-index: -1;}
+			&:hover { 
+				&::before { left:-100%;}
+			}
+		}
+	}
+	.invalid-feedback { font-size: 1.4rem; position: absolute; margin-left: 0; margin-top: .5rem; width: 100%; width: calc(100% - 12rem); justify-content: center; background: rgba(0, 0, 0, 0.20);
+		span { font-weight: 500;}
+	}	
+	.save-check { margin-top: 1.6rem; font-size: 1.4rem; @include flex(.5rem, center);
+		.custom-input {
+			&::before, 
+			&::after { width: 1.6rem;height: 1.6rem;border-radius: 0.4rem; border: 1px solid rgba(255,255,255,0.3); }
+			&:has(input:checked)::after {background: transparent; line-height: normal;}
+		}
+	}
+	&-guide { font-size: 1.4rem; margin-top: 6rem; margin-bottom: 2rem; text-align: center;}
+	.btn-gw { margin: 0 auto; background: rgba(0,0,0,.2); border-radius: 0.8rem; border: 0; color: #fff; padding: 1rem 1.4rem; height:auto; font-size: 1.5rem;
+		&:hover { background: rgba(0,0,0,.5);}
+	}
+
+	&-foot {  @include pos(lb, 50%, 6rem); font-size: 1.4rem; text-align: center; color:rgba(255,255,255,0.7); text-shadow: 2px 2px rgb(0, 0, 0);
+		.admin-info { @include flex(1rem, center, center);
+			a { color: var(--white);
+				&:first-of-type { @include vbar(1px, .8rem, rgba(255,255,255,0.3), 1rem);}
+			}			
+		}
+		.copyright { margin-top: .5rem;}
+	}
+	
+}

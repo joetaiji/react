@@ -1,0 +1,38 @@
+@import "../mixin";
+
+.datepicker { position: absolute; top: 100%; left: 0; z-index: 30!important; display: none; width: 26rem; min-height: 15rem; background: var(--white);border-radius: 1.2rem; padding: 1rem; z-index: 10; box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10); 
+	.prev, .next {  font-size: 0; color: var(--white); text-align: center;
+		&::before { content: ''; display: block; font-family: 'remixicon'; font-size: 1.5rem; color: var(--gray-40); cursor: pointer;}
+	}
+	.prev::before { content: "\ea64";}
+	.next::before { content: "\ea6e";}
+	.datepicker-switch { font-size: 1.6rem; color: var(--gray-90); padding: 1rem 0; text-align: center; }
+	.active { background: var(--primary-30)!important; color: var(--white)!important; border-radius: 0.4rem;}	
+	.dow,
+	.old,
+	.new { color: var(--gray-40)!important;}
+	.dow { font-weight: 400; font-size: 1.4rem;}
+	.day { text-align: center; font-size: 1.5rem; color: var(--gray-90); cursor: pointer;		
+		&.today { background: var(--gray-10); border-radius: 0.4rem;}
+		&.selected {background: var(--primary-30)!important;
+			&.range-start { border-radius: .4rem 0 0 .4rem; 
+				&.range-end { border-radius: .4rem; }
+			}
+			&.range-end { border-radius: 0 .4rem .4rem 0;}
+		}
+		&.range { background: var(--primary-5);}
+	}
+	.month,
+	.year,
+	.decade,
+	.century { font-size: 1.6rem; color: var(--gray-90); @include flex(null,center, cneter); @include circle(5.6rem); border-radius: 50%; padding: 0.8rem; cursor: pointer; transition: 0.2s;
+		&:hover { background: var(--primary-5);}	
+	}
+	
+	tfoot {position: relative; height: 3rem; font-size: 1.3rem;
+		.today { @include pos(lb, 1rem, 0); color: var(--gray-40); cursor: pointer;
+			&:hover { color: var(--primary);}
+		}
+		.clear { @include pos(rb, 1rem, 0); color: var(--gray-90); cursor: pointer;}
+	}
+}

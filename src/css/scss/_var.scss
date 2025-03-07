@@ -1,0 +1,73 @@
+@use "mixin";
+:root { 
+    //폰트
+	--fontFamily : "pretendard", sans-serif;
+    --icon : "remixicon", sans-serif;
+    --fontSize : 1.7rem;
+    --letterSpace : -.025em;
+    --fontColor : var(--gray-70);
+
+	//무채색   
+    --black : #000;    
+    --white : #fff; 
+	
+	//칼라코드값이 바로 보이지 않아 불편함
+	// $colors: ("--gray": #8e8e8e, "--primary": #099367, "--secondary": #003675, "--point": #E71825);
+	// @each $name, $color in $colors {	
+	// 	#{$name}: $color;	
+	// 	#{$name}-5: color-mix(in srgb, var(#{$name}), #f9fbfc 95%); 
+	// 	#{$name}-10: color-mix(in srgb, var(#{$name}), white 80%); 
+	// 	#{$name}-20: color-mix(in srgb, var(#{$name}), white 60%); 
+	// 	#{$name}-30: color-mix(in srgb, var(#{$name}), white 40%); 
+	// 	#{$name}-40: color-mix(in srgb, var(#{$name}), white 20%);
+	// 	#{$name}-50: $color; 
+	// 	#{$name}-60: color-mix(in srgb, var(#{$name}), black 20%); 
+	// 	#{$name}-70: color-mix(in srgb, var(#{$name}), black 40%); 
+	// 	#{$name}-80: color-mix(in srgb, var(#{$name}), black 60%); 
+	// 	#{$name}-90: color-mix(in srgb, var(#{$name}), black 80%); 
+	// }
+
+	$colors: (
+		"--gray": #8e8e8e, 
+		"--gray-5": #f8f8fa, 
+		"--gray-10": #eee, 
+		"--gray-15": #ddd, 
+		"--gray-20": #ccc, 
+		"--gray-30": #b3b3b3, 
+		"--gray-35": #aaa, 
+		"--gray-40": #999,  
+		"--gray-50": #808080,  
+		"--gray-60": #666, 
+		"--gray-70": #4d4d4d, 
+		"--gray-80": #333, 
+		"--gray-90": #111,
+
+		"--primary": #099367, 
+		"--primary-5": #EFF9F6, 
+		"--primary-10": #caebe1, 
+		"--primary-30": #04B87F, 
+		"--primary-50": #099367, 
+		"--primary-60": #067b56, 
+		
+		"--secondary": #003675,
+		"--secondary-5": #ECF5FF,
+		"--secondary-10": #A1C6FF,
+		"--secondary-30": #2B7BFF,
+		"--secondary-60": #134d95,
+		"--secondary-70": #003675,
+		"--secondary-80": #213362,
+		"--secondary-90": #141f3c,
+		"--point": #E71825,
+		"--point-5": #FFF1F1,
+		"--point-30": #f55,
+		);
+	@each $name, $color in $colors {	
+		#{$name}: $color;
+	} 
+
+	
+
+	//컨테이너 넓이
+    --inner : #{ $web };	    
+ } 
+

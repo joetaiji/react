@@ -1,0 +1,23 @@
+@import "../mixin";
+
+[class^=heading-] { position: relative; }
+
+.heading {	
+	&-m { font-size: 2rem; color: var(--gray-90); margin: 3.4rem 0 2rem 0; @include flex(1rem, center);
+		small { font-size: 1.4rem; color: var(--gray-60); font-weight: 400;}
+		&:first-child { margin-top: 0;}
+		&.vert { flex-direction: column; align-items: flex-start;}
+	}
+	&-s { font-size: 1.7rem; margin: 2.4rem 0 1.6rem; }
+	&-xs { font-size: 1.9rem; margin: 2.4rem 0 1.6rem; @include bullet(.7rem, .7rem, #3e77c6, 1rem, 50%); }
+}
+
+
+.footnote { font-size: 1.5rem; line-height: 1.5; color: var(--gray-70); }
+
+.reference {
+	position: relative; padding-left: 1.8rem;
+
+	&::before { content: '※'; @include pos(lt, 0, 0); }
+}
+.link-text { text-decoration:underline; color:var(--primary);}
