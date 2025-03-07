@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FilterItem() {	
 	return (
-		<div className="filter-item type-item">
+		<div className="filter-item">
 			<div className="item-title">
 				<strong>프로젝트 분류</strong>
 			</div>
