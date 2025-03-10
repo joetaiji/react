@@ -71,7 +71,7 @@
 		}
 	}
 	.item-cont .selected { padding: .4rem 1rem .4rem .4rem;}
-	&-cont { @include inactive(.5s); max-height: 0; display: grid; border-left: 1px solid var(--gray-15); grid-template-columns: repeat(4, 1fr); }
+	&-cont { @include inactive(.5s); max-height: 0; display: grid; border-left: 1px solid var(--gray-15); border-right: 1px solid var(--gray-15); grid-template-columns: repeat(4, 1fr); }
 	&-item { border: 1px solid var(--gray-15); padding: .6rem; transition: 0.2s; position: relative; margin: -1px 0 0 -1px;
 		.item-add { opacity: 0; visibility: hidden; position: absolute;left: 0; top: 0; width: 100%; height: 100%; z-index: 0; transition: 0.2s;
 			.ri-add-circle-fill { position: absolute; right: 2rem; top: 2rem; color:var(--primary); font-size: 2.8rem;}
@@ -104,7 +104,7 @@
 		.item-row { display: flex; gap: 0.8rem; width: 100%;}
 		&.overflow .btn-item-more{display: flex;}
 	}
-	&-foot {padding: 1.6rem 2rem; border: 1px solid var(--gray-15); border-radius: 0 0 1.2rem 1.2rem; border-top: 0; @include flex(null, center, space-between); display: none; 
+	&-foot {padding: 1.6rem 2rem; border: 1px solid var(--gray-15); border-radius: 0 0 1.2rem 1.2rem;  @include flex(null, center, space-between); display: none; 
 		.btn-filter-reset { display: flex; gap:.4rem; padding: 1rem 2rem; border-radius: 2rem; border: 1px solid var(--gray-10); color: var(--gray-80);transition: 0.2s;
 			&:hover { background: var(--gray-5);}
 			&:disabled { background: var(--gray-5); color: var(--gray-40);}
