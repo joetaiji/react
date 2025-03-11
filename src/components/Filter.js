@@ -10,7 +10,7 @@ export default function Filter() {
 				<FilterItem itemName="deptItem"/>
 				<FilterItem itemName="corpItem"/>
 				<FilterItem itemName="managerItem"/>
-				<FilterItem itemName="statusItem"/>
+				{/* <FilterItem itemName="statusItem"/> */}
 			</div>	
 			<div className="filter-setting"></div>
 	
