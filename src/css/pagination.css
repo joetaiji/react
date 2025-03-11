@@ -1,0 +1,100 @@
+.pagination {
+  margin: 3rem 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  /* .page-navi, */
+  /* .page-navi { border: 1px solid var(--gray-15); } */
+}
+.pagination .page-navi {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.pagination .page-navi:hover {
+  color: var(--gray-90);
+}
+.pagination .page-link {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+.pagination .page-link:hover, .pagination .page-link:focus {
+  text-decoration: none;
+  background-color: var(--gray-5);
+  color: var(--gray-90);
+}
+.pagination .page-links {
+  margin: 0 0.5rem;
+  display: flex;
+  gap: 0.2rem;
+  font-size: 1.5rem;
+}
+.pagination .link-dot:hover, .pagination .link-dot:focus {
+  border-color: transparent;
+}
+.pagination .prev::before {
+  content: "\ea64";
+  font-family: var(--icon);
+  font-size: 2rem;
+  display: block;
+}
+.pagination .next::before {
+  content: "\ea6e";
+  font-family: var(--icon);
+  font-size: 2rem;
+  display: block;
+}
+.pagination .link-dot::before {
+  content: "\ef79";
+  font-family: var(--icon);
+  font-size: 2rem;
+  display: block;
+}
+.pagination .next {
+  flex-direction: row-reverse;
+}
+.pagination .active {
+  background-color: var(--white);
+  color: var(--gray-90);
+  font-weight: 600;
+  border-color: var(--gray-90);
+}
+
+@media (max-width: 767.98px) {
+  .pagination {
+    position: relative;
+    padding-top: 5rem;
+  }
+  .pagination .page-navi {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    translate: -50% 0;
+    transition: 0.2s;
+  }
+  .pagination .page-navi.prev {
+    translate: -100% 0;
+  }
+  .pagination .page-navi.next {
+    translate: 50% 0;
+  }
+  /* .paging {
+  	.page-none { display: none; }
+  	.page-now { display: flex; }
+  }
+  .board-pager {
+  	.group a { display: none; 
+  		&.active { display: flex; }
+  	}
+  }
+  .last_page { @include flex(1rem, center, center); } */
+}/*# sourceMappingURL=pagination.css.map */
