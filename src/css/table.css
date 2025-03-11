@@ -1,0 +1,655 @@
+@charset "UTF-8";
+/* table */
+.table.scroll {
+  overflow-x: auto;
+}
+.table.scroll::-webkit-scrollbar-track {
+  background-color: var(--white);
+  border-radius: 0.3rem;
+}
+.table.scroll::-webkit-scrollbar {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+.table.scroll::-webkit-scrollbar-thumb {
+  background-color: var(--gray-20);
+  border-radius: 0.3rem;
+}
+.table.scroll > table {
+  min-width: 140rem;
+}
+.table td, .table th {
+  border-bottom: 1px solid var(--gray-10);
+  padding: 1rem 0.2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+.table td.text_left, .table th.text_left {
+  padding-left: 2rem;
+  text-align: left;
+}
+.table th {
+  white-space: nowrap;
+  font-size: 1.7rem;
+}
+.table .subject,
+.table .orderer {
+  display: block !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
+}
+.table .subject[contenteditable],
+.table .orderer[contenteditable] {
+  justify-content: flex-start;
+}
+.table > table > thead > tr > th {
+  border-bottom: 0;
+}
+.table > table > thead {
+  position: relative;
+}
+.table > table > thead > tr > th {
+  padding: 1.8rem 0.2rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  position: relative;
+}
+.table > table > thead > tr > th:first-child {
+  position: static;
+}
+.table > table > thead > tr > th:first-child::before {
+  content: "";
+  background: var(--gray-5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1.2rem;
+}
+.table > table > thead > tr.no-bg > th:first-child {
+  position: relative;
+}
+.table > table > thead > tr.no-bg > th:first-child::before {
+  display: none;
+}
+.table > table > thead > tr.manual-bg > th {
+  background: var(--gray-5);
+}
+.table > table > thead > tr.manual-bg > th:first-child {
+  border-radius: 1.2rem 0 0 1.2rem;
+}
+.table > table > thead > tr.manual-bg > th:first-child::before {
+  display: none;
+}
+.table > table > thead > tr.manual-bg > th:last-child {
+  border-radius: 0 1.2rem 1.2rem 0;
+}
+.table > table > thead > tr.manual-bg > th:only-child {
+  border-radius: 1.2rem;
+}
+.table > table > thead:has(.manual-bg) + tbody tr:first-child th {
+  border-radius: 1.2rem 1.2rem 0 0;
+  box-shadow: inset 0 1rem 0 var(--white);
+  padding-top: 1.6rem;
+}
+.table > table > thead:has(.manual-bg) + tbody tr:last-child th {
+  border-radius: 0 0 1.2rem 1.2rem;
+  box-shadow: inset 0 -1rem 0 var(--white);
+  padding-bottom: 1.6rem;
+}
+.table > table > tbody > tr > th {
+  font-size: 1.6rem;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+.table > table td {
+  position: relative;
+}
+.table > table tfoot {
+  border-top: 1px solid var(--gray-40);
+}
+.table > table + * {
+  margin-top: 0.8rem;
+}
+.table > table .ri-calendar-line {
+  margin-right: 0.4rem;
+}
+.table .btn-popup-view {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transition: 0.2s;
+}
+.table td:has(.btn-popup-view):hover .btn-popup-view,
+.table td:has(.btn-popup-view):focus .btn-popup-view {
+  opacity: 1;
+  visibility: visible;
+}
+.table [contenteditable] {
+  display: inline-flex;
+  justify-content: center;
+  vertical-align: middle;
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  min-width: 8.4rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.table [contenteditable]:hover {
+  outline: 0;
+  background: var(--primary-5);
+}
+.table [contenteditable]:hover:empty::after {
+  content: "클릭하여 입력" !important;
+  transition: 0.2s;
+}
+.table [contenteditable]:focus {
+  outline: 1px solid var(--primary-30);
+  outline-offset: -1px;
+  background: var(--white);
+}
+.table [contenteditable].text-left {
+  justify-content: flex-start;
+}
+.table [contenteditable].text-center {
+  justify-content: center;
+}
+.table [contenteditable].text-right {
+  justify-content: flex-end;
+}
+.table .btn-draggable,
+.table .input-date,
+.table .input-date input,
+.table span[data-layer] {
+  cursor: pointer;
+}
+.table.narrow th, .table.narrow td {
+  padding: 0.8rem 0.2rem;
+  font-size: 1.5rem;
+  word-break: break-all;
+}
+.table.in-border th, .table.in-border td {
+  border-left: 1px solid var(--gray-30);
+  border-right: 1px solid var(--gray-30);
+}
+.table.in-border th:first-child, .table.in-border th:first-child, .table.in-border td:first-child, .table.in-border td:first-child {
+  border-left: 0;
+}
+.table.in-border th:last-child, .table.in-border th:last-child, .table.in-border td:last-child, .table.in-border td:last-child {
+  border-right: 0;
+}
+.table.horizontal > table > tbody > tr > th,
+.table.horizontal > table > tbody > tr > td {
+  text-align: left;
+  padding-left: 0;
+}
+.table.sortable > table {
+  table-layout: fixed;
+}
+.table.sortable thead th .btn-sort {
+  vertical-align: middle;
+  display: inline-flex;
+  flex-direction: column;
+  color: var(--gray-35);
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-left: 0.2rem;
+}
+.table.sortable thead th .btn-sort .ri-arrow-down-s-fill {
+  margin-top: -0.8rem;
+}
+.table.sortable thead th .btn-sort.desc .ri-arrow-up-s-fill::before {
+  color: var(--primary-30);
+  content: "\ea76";
+}
+.table.sortable thead th .btn-sort.desc .ri-arrow-down-s-fill {
+  display: none;
+}
+.table.sortable thead th .btn-sort.asc .ri-arrow-up-s-fill::before {
+  color: var(--primary-30);
+  content: "\ea4c";
+}
+.table.sortable thead th .btn-sort.asc .ri-arrow-down-s-fill {
+  display: none;
+}
+.table .layout-fixed {
+  table-layout: fixed;
+}
+.table .ic-cal::before {
+  color: var(--gray-35);
+}
+.table .ic-cal:has(span)::before {
+  margin-right: 0.5rem;
+}
+.table .ic-cal:empty::after {
+  display: inline-flex !important;
+}
+.table .ic-amount::before {
+  color: var(--gray-35);
+}
+.table.sortable .state {
+  line-height: 1.2;
+  padding: 0.7rem 1.2rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+.table .item-layer {
+  padding: 1rem;
+}
+.table [data-layer=project],
+.table [data-layer=orderer] {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+}
+.table .amount {
+  text-align: right;
+  justify-content: flex-end;
+}
+.table .required [contenteditable]:empty::after {
+  content: "필수입력";
+}
+.table td span:empty::after {
+  content: "비어있음";
+  width: 100%;
+  font-size: 1.3rem;
+  color: var(--gray-40);
+  padding: 0.2rem;
+  letter-spacing: -1px;
+  transition: 0.2s;
+}
+.table .th-nobg th {
+  background: none !important;
+}
+
+.popup .table.scroll table {
+  min-width: 120rem;
+}
+
+.s-table {
+  border: 1px solid var(--gray-10);
+}
+.s-table thead th {
+  border-radius: 0 !important;
+}
+.s-table thead tr:nth-child(2) th {
+  background: var(--white);
+}
+
+.row-add {
+  width: 100%;
+  display: block;
+}
+
+.btn-row-add {
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  color: var(--gray-60);
+  transition: 0.2s;
+}
+.btn-row-add:hover {
+  color: var(--gray-90);
+}
+
+td .btn-row-add {
+  padding: 2rem 0;
+  border-bottom: 0;
+}
+
+/* row-line */
+.row-line {
+  border-top: 2px solid var(--gray-90);
+  border-bottom: 1px solid var(--gray-30);
+}
+.row-line > li {
+  display: flex;
+  border-top: 1px solid var(--gray-30);
+  word-break: keep-all;
+  padding: 1.5rem 2rem;
+  gap: 1rem;
+}
+.row-line > li:first-of-type {
+  border-top-color: transparent;
+}
+.row-line > li .label {
+  width: 20%;
+  min-width: 10rem;
+}
+.row-line > li .label-cont {
+  flex: 1;
+  min-width: 1%;
+}
+.row-line.col2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.row-line.col2 > li:nth-of-type(-n+2) {
+  border-top-color: transparent;
+}
+.row-line.col3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.row-line.col3 > li:nth-of-type(-n+3) {
+  border-top-color: transparent;
+}
+
+tr:hover > .row-btn-control .user-group {
+  opacity: 1;
+}
+
+.row-btn-control,
+.col-btn-control {
+  text-align: right !important;
+  padding-right: 0;
+}
+.row-btn-control .user-group,
+.col-btn-control .user-group {
+  position: absolute;
+  top: 50%;
+  right: inherit;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.row-btn-control .user-group .user-icon,
+.col-btn-control .user-group .user-icon {
+  margin-left: -0.6rem;
+}
+.row-btn-control .user-group .user-sum,
+.col-btn-control .user-group .user-sum {
+  margin-left: 0;
+  margin-top: 0.2rem;
+  display: block;
+}
+.row-btn-control .user-group,
+.col-btn-control .user-group {
+  opacity: 0;
+}
+.row-btn-control .btn-draggable,
+.col-btn-control .btn-draggable {
+  font-size: 2rem;
+  color: var(--gray-60);
+  padding: 0.5rem 0;
+  border-radius: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  transition: 0.2s;
+}
+.row-btn-control .btn-draggable:hover,
+.col-btn-control .btn-draggable:hover {
+  background-color: var(--gray-10);
+  color: var(--gray-90);
+}
+.row-btn-control .btn-group,
+.col-btn-control .btn-group {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: 0.2s ease;
+  position: absolute;
+  right: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+.row-btn-control .btn-group button,
+.col-btn-control .btn-group button {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-60);
+  transition: 0.2s;
+}
+.row-btn-control .btn-group button:hover,
+.col-btn-control .btn-group button:hover {
+  background-color: var(--gray-10);
+  color: var(--gray-90);
+}
+.row-btn-control.active .btn-group,
+.col-btn-control.active .btn-group {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+.row-btn-control.active .btn-draggable,
+.col-btn-control.active .btn-draggable {
+  opacity: 0;
+}
+
+.col-btn-control {
+  text-align: center !important;
+}
+.col-btn-control .btn-draggable {
+  display: block;
+  width: fit-content;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+.col-btn-control .ri-draggable {
+  display: inline-block;
+  line-height: 1;
+  transform: rotate(90deg);
+}
+.col-btn-control .btn-group {
+  right: auto;
+  left: 50%;
+  top: 1.8rem;
+  transform: translateX(-50%);
+  background: var(--gray-5);
+}
+.col-btn-control.active .btn-group {
+  display: flex;
+}
+
+/* .table:not(.horizontal) td:nth-last-child(-n+2):not(:nth-child(-n+2)) {
+	.item-layer{left:auto; right:0;}
+}
+.row-edit>td>.btn-save {position:absolute; top: 50%; right: -4rem; transform: translateY(-50%);}
+.table .table .row-edit>td>.btn-save { right: -2rem; padding:.5rem; } */
+.table .item-layer .item-group {
+  padding: 0;
+  border-top: 0;
+}
+
+.table.horizontal {
+  width: 100%;
+  /* overflow-x: auto;
+  > table { min-width: 119.8rem; } */
+}
+.table.horizontal .item-layer {
+  top: 0;
+  left: 10rem;
+}
+.table.horizontal .sales-layer {
+  top: 100%;
+  left: 0;
+  width: 17rem;
+}
+.table.horizontal [contenteditable] {
+  justify-content: flex-start;
+}
+
+.table .content-empty {
+  min-height: 10rem;
+  padding: 5rem 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-40);
+  font-size: 1.6rem;
+}
+.table .content-empty::before {
+  content: "\ea21";
+  font-family: "remixicon";
+}
+
+.hidden-table-wrap {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  overflow: hidden;
+  position: relative;
+  transition: 0.25s ease;
+}
+.hidden-table-wrap .swiper-control {
+  background: var(--gray-5);
+  width: 100%;
+  height: 6.15rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 1.2rem;
+}
+.hidden-table-wrap .swiper-control .swiper-button {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  border: 1px solid var(--gray-15);
+  position: absolute;
+  top: 3rem;
+}
+.hidden-table-wrap .swiper-control .swiper-button-prev {
+  left: -1.4rem;
+}
+.hidden-table-wrap .swiper-control .swiper-button-next {
+  right: -1.4rem;
+}
+.hidden-table-wrap col {
+  width: 15rem;
+}
+.hidden-table-wrap .table > table > thead th {
+  background: transparent;
+}
+
+.amount-table-wrap {
+  display: flex;
+}
+.amount-table-wrap .table {
+  flex: 1;
+  transition: 0.25s ease;
+}
+.amount-table-wrap .table th:has(+ .row-sum) {
+  border-radius: 0 1.2rem 1.2rem 0;
+}
+.amount-table-wrap .table th.row-sum {
+  background: var(--primary-5) !important;
+  color: var(--primary-30);
+  border-radius: 1.2rem !important;
+  box-shadow: inset 1rem 0 0 var(--white);
+  padding-left: 1rem;
+}
+.amount-table-wrap .table td {
+  text-align: right;
+}
+.amount-table-wrap .table td span {
+  justify-content: flex-end;
+}
+.amount-table-wrap .table tbody th, .amount-table-wrap .table tbody td {
+  border-bottom: 0;
+}
+.amount-table-wrap .table tbody th {
+  background: var(--gray-5);
+  position: relative;
+}
+.amount-table-wrap .table tbody th button {
+  width: 100%;
+  text-align: left;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.amount-table-wrap .table tfoot {
+  border-top: 1px solid var(--secondary-10);
+  border-bottom: 1px solid var(--secondary-10);
+}
+.amount-table-wrap .table tfoot th {
+  border-bottom: 0;
+  text-align: left;
+  background-color: var(--secondary-5);
+  padding-left: 1.5rem;
+}
+.amount-table-wrap .table tfoot td {
+  border-bottom: 0;
+  color: var(--secondary-30);
+  font-weight: 600;
+}
+.amount-table-wrap .row-parent {
+  height: 7.2rem;
+}
+.amount-table-wrap .row-parent th {
+  height: 100%;
+}
+.amount-table-wrap .row-parent td {
+  height: 100%;
+}
+.amount-table-wrap .row-parent small {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--gray-60);
+  font-weight: 400;
+}
+.amount-table-wrap .row-parent i {
+  display: inline-block;
+  position: absolute;
+  right: 1.5rem;
+  transition: 0.2s;
+}
+.amount-table-wrap .row-parent .active i {
+  transform: rotate(180deg);
+}
+.amount-table-wrap .row-child {
+  height: 5.7rem;
+}
+.amount-table-wrap .row-child th {
+  font-weight: 400;
+}
+.amount-table-wrap .row-child .tree::before {
+  content: "└";
+  display: inline-block;
+  font-size: 1.5rem;
+  color: var(--gray-60);
+  margin-right: 1rem;
+}
+.amount-table-wrap .row-child td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.amount-table-wrap .row-group {
+  border-top: 1px solid var(--gray-10);
+}
+.amount-table-wrap .row-group:first-child {
+  border-top: 0;
+}
+.amount-table-wrap.active {
+  gap: 4rem;
+}
+.amount-table-wrap.active .hidden-table-wrap {
+  opacity: 1;
+  visibility: visible;
+  width: 30rem;
+  overflow: visible;
+}
+.amount-table-wrap.active .hidden-table-wrap:has(.all-column-table) {
+  width: 18.5rem;
+}/*# sourceMappingURL=table.css.map */
