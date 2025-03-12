@@ -685,7 +685,7 @@ content 공통
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 30;
+  z-index: 9;
   border-radius: 0.8rem;
   background: var(--white);
   border: 1px solid var(--gray-15);
