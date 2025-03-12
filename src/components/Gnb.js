@@ -54,7 +54,7 @@ const Gnb = () => {
 					<a href="/vendor" data-page="menu6" className="selected"><i className="ri-service-fill"></i><span>거래처</span></a>
 				</li>
 				<li className="is-depth3">
-					<a href="/set_org" data-page="menu7"><i className="ri-settings-2-fill"></i><span>환경설정</span></a>
+					<a href="/setting" data-page="menu7"><i className="ri-settings-2-fill"></i><span>환경설정</span></a>
 					<ul>
 						<li className=""><a href="" data-page="menu7" className="selected">조직도</a></li>
 						<li><a href="" data-page="menu7-2">직원정보</a></li>
