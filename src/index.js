@@ -1,6 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Gnb from './components/Gnb';
+import Gnb from './components/Gnb';	
+import Mdi from './components/mdi';
 import App from './components/App';
 import './css/output.css'; // Ensure this path is correct and the file exists
 
@@ -11,6 +12,7 @@ root.render(
 		<main id="container">
 			<Gnb />
 			<div id="contents" className="contents">
+				<Mdi />
 				<App />
 			</div>
 		</main>

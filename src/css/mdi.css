@@ -1,0 +1,183 @@
+.tabs {
+  position: relative;
+  /* ul { display: flex; }
+  a, button { width: 100%; @include flex(.3rem, center, center); font-size: 1.8rem; text-align: center; padding: 2.3rem 3.5rem; position: relative; line-height: 1.2;
+  	&:hover { text-decoration: none; transition: .2s;}		
+  }
+  li.active {		
+  	a, button { font-weight: 700; }
+  }	 */
+}
+.tabs .depth4 {
+  display: flex;
+  border-bottom: 1px solid var(--gray-15);
+}
+.tabs .depth4 > li > a, .tabs .depth4 > li > button {
+  width: 100%;
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 0.7rem 2rem;
+  border-bottom: 0.3rem solid transparent;
+  margin-bottom: -1px;
+  color: var(--gray-40);
+}
+.tabs .depth4 > li > a:hover, .tabs .depth4 > li > button:hover {
+  text-decoration: none;
+  transition: 0.2s;
+  border-bottom-color: var(--gray-30);
+}
+.tabs .depth4 > li.active > a, .tabs .depth4 > li.active > button {
+  border-bottom: 0.2rem solid var(--primary-50);
+  color: var(--primary-50);
+  font-weight: 700;
+}
+.tabs .depth4 > li.active .depth5 {
+  display: flex;
+}
+.tabs .depth4 > li.active:has(.depth5) {
+  padding-bottom: 7rem;
+}
+.tabs .depth5 {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--gray-15);
+}
+.tabs .depth5 > li a, .tabs .depth5 > li button {
+  background-color: var(--gray-5);
+  color: var(--gray-90);
+  border-radius: 3rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 1.2rem 2rem;
+  transition: 0.2s;
+}
+.tabs .depth5 > li a:hover, .tabs .depth5 > li button:hover {
+  background-color: var(--gray-10);
+}
+.tabs .depth5 > li.active a, .tabs .depth5 > li.active button {
+  background: var(--primary-60);
+  color: var(--white);
+}
+.tabs .depth5 > li ~ li {
+  margin-left: -1px;
+}
+
+.mdi-area {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between; /* padding-right: 17rem; */
+}
+.mdi-area .swiper-slide {
+  width: auto;
+}
+.mdi-area .tab-control {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+.mdi-area .tab-control .swiper-button {
+  position: static;
+  transform: none;
+  width: 2.4rem;
+}
+.mdi-area .tab-control button {
+  border-color: var(--gray-20);
+}
+.mdi-area .tab-control .btn {
+  padding: 0.4rem;
+}
+
+.mdi-tabs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 3rem;
+}
+.mdi-tabs::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(246, 247, 251, 0) 0%, rgb(246, 247, 251) 100%);
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+.mdi-tabs .mdi-item-group {
+  display: flex; /* max-width: 80rem;  */
+}
+.mdi-tabs .mdi-item-group .mdi-item.active {
+  background: var(--white);
+  color: var(--gray-90);
+  font-weight: 700;
+}
+.mdi-tabs .mdi-item-group .mdi-item.active small {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  max-width: fit-content;
+}
+.mdi-tabs .mdi-item-group .mdi-item:only-child .ri-close-line {
+  display: none;
+}
+.mdi-tabs .mdi-item-group .ri-close-line {
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.mdi-tabs .mdi-item-group .ri-close-line:hover {
+  background-color: var(--gray-20);
+  color: var(--gray-90);
+}
+.mdi-tabs .mdi-item-group a, .mdi-tabs .mdi-item-group button {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 1rem 1.6rem;
+  position: relative;
+  line-height: 1.2;
+  border-radius: 1.2rem 1.2rem 0 0;
+  height: 4rem;
+  font-size: 1.5rem;
+  background-color: #7C7F91;
+  color: var(--white);
+  white-space: nowrap;
+  transition: 0.15s;
+  border: 0;
+}
+.mdi-tabs .mdi-item-group a:hover, .mdi-tabs .mdi-item-group button:hover {
+  background-color: color-mix(in srgb, #7C7F91, #000 15%);
+}
+.mdi-tabs .mdi-item-group a > small, .mdi-tabs .mdi-item-group button > small {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: 0.15s ease;
+  max-width: 0;
+  font-size: 1.5rem;
+}
+.mdi-tabs .mdi-item-group a i, .mdi-tabs .mdi-item-group button i {
+  display: none;
+}
+.mdi-tabs .mdi-item-group a .ri-close-line, .mdi-tabs .mdi-item-group button .ri-close-line {
+  display: flex;
+}/*# sourceMappingURL=mdi.css.map */
