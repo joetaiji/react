@@ -173,7 +173,7 @@
   width: 100%;
   margin-bottom: 3rem;
   position: relative;
-  z-index: 20;
+  z-index: 9;
 }
 .filter .item-layer .item-group .item,
 .filter .item {

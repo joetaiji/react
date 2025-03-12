@@ -7,13 +7,13 @@ const Table = () => {
 
   return (
     <div className="table-container">
-      <button 
+     {/*  <button 
         onClick={() => navigate('/result')}
         className="btn btn-primary"
         style={{ marginBottom: '1rem' }}
       >
         필터 결과 보기
-      </button>
+      </button> */}
       <div className="table sortable">
         <table>
           <colgroup>
