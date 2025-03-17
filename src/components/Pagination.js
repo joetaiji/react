@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/pagination.css';
+import './Pagination.css';
 
 export default function Table() {	
 return (

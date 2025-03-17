@@ -1,0 +1,70 @@
+/* :root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --font-family-base: 'Pretendard', sans-serif;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-sm: 14px;
+    
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    
+    --border-radius: 4px;
+    --border-color: #dee2e6;
+    
+    --transition-base: all 0.2s ease-in-out;
+}  */
+
+/* =======================================================================================
+변수
+======================================================================================= */
+:root {
+	--fontFamily: "pretendard", sans-serif;
+	--icon: "remixicon", sans-serif;
+	--fontSize: 1.7rem;
+	--letterSpace: -.025em;
+	--fontColor: var(--gray-70);
+	--black: #000;
+	--white: #fff;
+	--gray: #8e8e8e;
+	--gray-5: #f8f8fa;
+	--gray-10: #eee;
+	--gray-15: #ddd;
+	--gray-20: #ccc;
+	--gray-30: #b3b3b3;
+	--gray-35: #aaa;
+	--gray-40: #999;
+	--gray-50: #808080;
+	--gray-60: #666;
+	--gray-70: #4d4d4d;
+	--gray-80: #333;
+	--gray-90: #111;
+	--primary: #099367;
+	--primary-5: #EFF9F6;
+	--primary-10: #caebe1;
+	--primary-30: #04B87F;
+	--primary-50: #099367;
+	--primary-60: #067b56;
+	--secondary: #003675;
+	--secondary-5: #ECF5FF;
+	--secondary-10: #A1C6FF;
+	--secondary-30: #2B7BFF;
+	--secondary-60: #134d95;
+	--secondary-70: #003675;
+	--secondary-80: #213362;
+	--secondary-90: #141f3c;
+	--point: #E71825;
+	--point-5: #FFF1F1;
+	--point-30: #f55;
+	--inner: 1620px;
+  }
+  

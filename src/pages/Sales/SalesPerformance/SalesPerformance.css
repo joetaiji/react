@@ -1,0 +1,34 @@
+/* SalesPerformance specific styles */
+.sales-performance-container {
+    padding: var(--spacing-lg);
+}
+
+.performance-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.performance-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.performance-chart {
+    margin: var(--spacing-lg) 0;
+}
+
+.performance-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.table-container {
+    margin-bottom: var(--spacing-lg);
+} 

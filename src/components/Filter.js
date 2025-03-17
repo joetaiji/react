@@ -1,6 +1,6 @@
 import React from 'react';
 import FilterItem from './FilterItem.js';
-import '../css/filter.css';
+import './Filter.css';
 
 export default function Filter() {	
 	return (

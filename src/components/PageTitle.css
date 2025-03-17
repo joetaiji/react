@@ -1,0 +1,29 @@
+.page-contents .page-title-wrap {
+	position: relative;
+	border-bottom: 1px solid var(--gray-30);
+	margin-bottom: 4rem;
+  }
+  .page-contents .page-title {
+	height: 4rem;
+	font-size: 2.4rem;
+	color: var(--gray-90);
+	white-space: nowrap;
+	margin-bottom: 2rem;
+  }
+  .page-contents .print-btn {
+	width: 4rem;
+	height: 4rem;
+	font-size: 2rem;
+	position: absolute;
+	right: 2rem;
+	top: 3rem;
+	z-index: 9;
+	border-radius: 0.8rem;
+	background: var(--white);
+	border: 1px solid var(--gray-15);
+	transition: 0.2s;
+  }
+  .page-contents .print-btn:hover {
+	background-color: var(--gray-5);
+	color: var(--gray-90);
+  }

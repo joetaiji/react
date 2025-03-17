@@ -1,8 +1,0 @@
-@charset "utf-8"; 
-
-/* ui/ux css */
-@import url('initialize.css');
-@import url('common.css');
-@import url('layout.css');
-@import url('contents.css');
-/* @import url('components.css'); */

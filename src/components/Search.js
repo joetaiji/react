@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Search.css';
 export default function PageTitle() {	
 	return (
 		<div className="sch-input">
