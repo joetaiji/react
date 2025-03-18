@@ -571,3 +571,110 @@ html .m-page {
     font-size: 7px;
   }
 }/*# sourceMappingURL=common.css.map */
+
+
+.col {
+	display: grid;
+  }
+  
+  .col1 {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr) !important;
+  }
+  
+  .colspan1 {
+	grid-column: span 1;
+  }
+  
+  .rowspan1 {
+	grid-row: span 1;
+  }
+  
+  .col2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .colspan2 {
+	grid-column: span 2;
+  }
+  
+  .rowspan2 {
+	grid-row: span 2;
+  }
+  
+  .col3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .colspan3 {
+	grid-column: span 3;
+  }
+  
+  .rowspan3 {
+	grid-row: span 3;
+  }
+  
+  .col4 {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr) !important;
+  }
+  
+  .colspan4 {
+	grid-column: span 4;
+  }
+  
+  .rowspan4 {
+	grid-row: span 4;
+  }
+  
+  .col5 {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr) !important;
+  }
+  
+  .colspan5 {
+	grid-column: span 5;
+  }
+  
+  .rowspan5 {
+	grid-row: span 5;
+  }
+  
+  @media (max-width: 767.98px) {
+	.col4 {
+	  grid-template-columns: repeat(2, 1fr) !important;
+	}
+	.m-col {
+	  display: grid;
+	  grid-template-columns: 1fr !important;
+	}
+	.m-col .colspan2 {
+	  grid-column: span 1;
+	}
+	.m-col .rowspan2 {
+	  grid-row: span 1;
+	}
+	.m-col .colspan3 {
+	  grid-column: span 1;
+	}
+	.m-col .rowspan3 {
+	  grid-row: span 1;
+	}
+	.m-col .colspan4 {
+	  grid-column: span 1;
+	}
+	.m-col .rowspan4 {
+	  grid-row: span 1;
+	}
+	.m-col .colspan5 {
+	  grid-column: span 1;
+	}
+	.m-col .rowspan5 {
+	  grid-row: span 1;
+	}
+	.m-col2 {
+	  grid-template-columns: repeat(2, 1fr) !important;
+	}
+  }

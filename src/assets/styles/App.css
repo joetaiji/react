@@ -6,3 +6,6 @@
 
 /* Layout */
 @import './layout/layout.css';
+
+/* Contents */
+@import './layout/contents.css';

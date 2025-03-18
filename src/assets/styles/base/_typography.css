@@ -2,6 +2,80 @@
 @import url('../../fonts/Pretendard/pretendard.css');
 @import url('../../fonts/remixicon/remixicon.css');
 
+[class^=heading-] {
+	position: relative;
+}
+
+.heading-m {
+	font-size: 2rem;
+	color: var(--gray-90);
+	margin: 3.4rem 0 2rem 0;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.heading-m small {
+	font-size: 1.4rem;
+	color: var(--gray-60);
+	font-weight: 400;
+}
+
+.heading-m:first-child {
+	margin-top: 0;
+}
+
+.heading-m.vert {
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.heading-s {
+	font-size: 1.7rem;
+	margin: 2.4rem 0 1.6rem;
+}
+
+.heading-xs {
+	font-size: 1.9rem;
+	margin: 2.4rem 0 1.6rem;
+	position: relative;
+	padding-left: 1.7rem;
+}
+
+.heading-xs::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 1rem;
+	width: 0.7rem;
+	height: 0.7rem;
+	background-color: #3e77c6;
+	border-radius: 50%;
+}
+
+
+.footnote {
+	font-size: 1.5rem;
+	line-height: 1.5;
+	color: var(--gray-70);
+  }
+  
+  .reference {
+	position: relative;
+	padding-left: 1.8rem;
+  }
+  .reference::before {
+	content: "※";
+	position: absolute;
+	left: 0;
+	top: 0;
+  }
+  
+  .link-text {
+	text-decoration: underline;
+	color: var(--primary);
+  }
+
 /* body {
     font-family: var(--font-family-base);
     font-size: var(--font-size-base);
