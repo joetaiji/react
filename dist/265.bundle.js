@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact_app=self.webpackChunkreact_app||[]).push([[265],{265:(e,a,t)=>{t.r(a),t.d(a,{default:()=>s});var c=t(6540),n=t(6744);const s=function(){return c.createElement("div",{className:"sales-container"},c.createElement(n.sv,null))}}}]);

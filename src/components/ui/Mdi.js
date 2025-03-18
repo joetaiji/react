@@ -10,7 +10,8 @@ export default function Mdi() {
 				<div className="mdi-item-group swiper-wrapper">
 					<a href="dashboard.html" data-page="menu1"
 						className="mdi-item swiper-slide active"><i className="ri-home-3-fill"></i><span>대시보드</span><i
-							className="ri-close-line"></i></a>
+							className="ri-close-line"></i>
+					</a>
 				</div>
 			</div>
 			<div className="tab-control">

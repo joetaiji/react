@@ -1,0 +1,33 @@
+/* Expense common styles */
+.expense-container {
+    padding: var(--spacing-lg);
+}
+
+.expense-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.expense-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.expense-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.expense-summary {
+    margin-bottom: var(--spacing-lg);
+}
+
+.search-container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.table-container {
+    margin-bottom: var(--spacing-lg);
+} 
