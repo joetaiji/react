@@ -1,6 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
-import Tooltip from '../../components/Tooltip';
+import Tooltip from '../../components/ui/Tooltip';
 
 const Dashboard = () => {
     return (

@@ -1,16 +1,15 @@
-.page-contents .page-title-wrap {
+.page-title-area .page-title-wrap {
 	position: relative;
-	border-bottom: 1px solid var(--gray-30);
-	margin-bottom: 4rem;
+	display: flex;
+	gap: 1.4rem;
   }
-  .page-contents .page-title {
+  .page-title-area .page-title {
 	height: 4rem;
 	font-size: 2.4rem;
 	color: var(--gray-90);
 	white-space: nowrap;
-	margin-bottom: 2rem;
   }
-  .page-contents .print-btn {
+  .page-title-area .print-btn {
 	width: 4rem;
 	height: 4rem;
 	font-size: 2rem;
@@ -23,7 +22,13 @@
 	border: 1px solid var(--gray-15);
 	transition: 0.2s;
   }
-  .page-contents .print-btn:hover {
+  .page-title-area .print-btn:hover {
 	background-color: var(--gray-5);
 	color: var(--gray-90);
   }
+  .page-title-bar .filter {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 0;
+    height: 4rem;
+}

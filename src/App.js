@@ -5,12 +5,11 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import { lazy, Suspense } from 'react';
 
 // Core components
-import Gnb from './components/ui/Gnb.js';
-import Mdi from './components/ui/Mdi.js';
-import PageTitle from './components/PageTitle.js';
-import Button from './components/Button.js';
-import Footer from './components/ui/Footer.js';
-import Popup from './components/Popup.js';
+import Footer from './components/layout/Footer';
+import Gnb from './components/layout/Gnb';
+import Mdi from './components/layout/Mdi';
+import PageTitleArea from './components/layout/PageTitleArea';
+import Popup from './components/ui/Popup';
 
 // Lazy loaded components
 const Dashboard = lazy(() => import('./pages/Dashboard'));
@@ -106,9 +105,7 @@ const AppContent = () => {
 						onItemClose={handleMdiClose}
 					/>
 					<div className="page-contents">
-						<PageTitle />
-						<Button />
-
+						<PageTitleArea />
 						<Suspense fallback={<div>Loading...</div>}>
 							<Routes>
 								{/* Main routes */}

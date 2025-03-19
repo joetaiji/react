@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useRef } from 'react';
-import { itemData } from '../constants/filterItems';
+import { itemData } from '../../constants/filterItems';
 
 // Constants
 const SELECTORS = {

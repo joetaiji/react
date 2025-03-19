@@ -1,6 +1,6 @@
 import React from 'react';
-import Search from '../../../components/Search';
-import Table from '../../../components/Table';
+import Search from '../../../components/ui/Search';
+import Table from '../../../components/ui/Table';
 import './Job.css';
 
 const Job = () => {

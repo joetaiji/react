@@ -1,8 +1,4 @@
-/* import React, { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
-import * as am5 from '@amcharts/amcharts5';
-import * as am5xy from '@amcharts/amcharts5/xy';
-import am5themes_Animated from '@amcharts/amcharts5/themes/Animated'; */
+
 import React from 'react';
 import profileImage from '../../assets/images/profiles/photo_1.png';	
 import './Sales.css';
