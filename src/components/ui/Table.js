@@ -1,20 +1,20 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import ItemLayer from './ItemLayer';
 import './Table.css';
 
 const Table = () => {
-  const navigate = useNavigate();
+  const [activeLayer, setActiveLayer] = useState(null);
+
+  const handleLayerClick = (e) => {
+    const layerType = e.target.closest('[data-layer]')?.dataset.layer;
+    if (layerType) {
+      setActiveLayer(layerType);
+    }
+  };
 
   return (
     <div className="table-container">
-     {/*  <button 
-        onClick={() => navigate('/result')}
-        className="btn btn-primary"
-        style={{ marginBottom: '1rem' }}
-      >
-        필터 결과 보기
-      </button> */}
-      <div className="table sortable">
+      <div className="table sortable" onClick={handleLayerClick}>
         <table>
           <colgroup>
             <col className="w3" />
@@ -65,22 +65,22 @@ const Table = () => {
                 <span className="btn-draggable"><i className="ri-draggable"></i></span>
               </td>
               <td>
-                <span data-layer="type" contentEditable>홈페이지구축, 유지보수</span>
+                <span data-layer="typeItem" contentEditable>홈페이지구축, 유지보수</span>
               </td>
               <td>
-                <span data-layer="project" contentEditable>2024년 연구개발특구진흥재단 홈페이지 기능 개선 및 유지보수 용역</span>
+                <span data-layer="projectItem" contentEditable>2024년 연구개발특구진흥재단 홈페이지 기능 개선 및 유지보수 용역</span>
                 <button className="btn xsm btn-popup-view" data-id="project-create">
                   <i className="ri-search-2-line"></i>상세보기
                 </button>
               </td>
               <td>
-                <span data-layer="orderer" className="orderer" contentEditable>(재)연구개발특구진흥재단</span>
+                <span data-layer="ordererItem" className="orderer" contentEditable>(재)연구개발특구진흥재단</span>
               </td>
               <td>
-                <span data-layer="dept" contentEditable>MX</span>
+                <span data-layer="deptItem" contentEditable>MX</span>
               </td>
               <td>
-                <span data-layer="manager" contentEditable>
+                <span data-layer="managerItem" contentEditable>
                   <span className="user-icon">김</span> 김정서
                 </span>
               </td>
@@ -104,10 +104,10 @@ const Table = () => {
                 </span>
               </td>
               <td>
-                <span data-layer="status" className="state before">착수전</span>
+                <span data-layer="statusItem" className="state before">착수전</span>
               </td>
               <td style={{ display: 'none' }}>
-                <span data-layer="corp" contentEditable>플랜파트너스</span>
+                <span data-layer="corpItem" contentEditable>플랜파트너스</span>
               </td>
               <td style={{ display: 'none' }}>
                 <span contentEditable>15234596</span>
@@ -116,6 +116,7 @@ const Table = () => {
           </tbody>
         </table>
       </div>
+      <ItemLayer activeLayer={activeLayer} />
     </div>
   );
 };

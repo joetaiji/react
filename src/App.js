@@ -29,7 +29,6 @@ const ExpenseOutsourcing = lazy(() => import('./pages/Expense/ExpenseOutsourcing
 const ExpenseManagement = lazy(() => import('./pages/Expense/ExpenseManagement'));
 
 // Lazy loaded setting components
-const Organization = lazy(() => import('./pages/Setting/Organization'));
 const Employee = lazy(() => import('./pages/Setting/Employee')); 
 const Job = lazy(() => import('./pages/Setting/Job'));
 const Goals = lazy(() => import('./pages/Setting/Goals'));
@@ -130,7 +129,7 @@ const AppContent = () => {
 								
 								{/* Setting routes */}
 								<Route path="/setting" element={<Setting />} />
-								<Route path="/setting/organization" element={<Organization />} />
+								
 								<Route path="/setting/employee" element={<Employee />} />
 								<Route path="/setting/job" element={<Job />} />
 								<Route path="/setting/goals" element={<Goals />} />

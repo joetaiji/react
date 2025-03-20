@@ -1,1 +1,463 @@
-/*# sourceMappingURL=project.css.map */
+/* =======================================================================================
+02.프로젝트
+======================================================================================= */
+.project-total .amount {
+	color: var(--primary);
+	font-weight: 600;
+	margin-top: 0.8rem;
+  }
+  .project-total .label {
+	font-size: 1.3rem;
+	color: var(--gray-60);
+	background: var(--gray-5);
+	border-radius: 0.4rem;
+	padding: 0.4rem 0.6rem;
+  }
+  
+  .project-amount-group {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+  }
+  
+  .sales-manage {
+	display: flex;
+	gap: 0.8rem;
+	flex-flow: column wrap;
+	height: 14rem;
+  }
+  .sales-manage > li {
+	display: flex;
+	gap: 2rem;
+  }
+  .sales-date {
+	display: flex;
+	border: 1px solid var(--gray-10);
+	border-radius: 0.4rem;
+	color: var(--gray-70);
+	font-size: 1.3rem;
+  }
+  .sales-date * {
+	padding: 0.5rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  .sales-date .label {
+	background: var(--gray-10);
+  }
+  .sales-date .num {
+	font-size: 1rem;
+  }
+  .sales-row {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+  }
+  .sales-row .amount {
+	padding: 0.8rem 2rem;
+	min-width: 16rem;
+	border-radius: 0.4rem;
+  }
+  .sales-row .bg1 {
+	background: var(--gray-5);
+  }
+  .sales-row .bg2 {
+	background: var(--point-5);
+  }
+  .sales-row .bg2 b {
+	color: var(--point-30);
+  }
+  .sales-row .bg3 {
+	background: var(--secondary-5);
+  }
+  .sales-row .bg4 {
+	background: var(--primary-5);
+  }
+  .sales-row .bg4 b {
+	color: var(--primary);
+  }
+  .sales-row.column {
+	flex-direction: column;
+  }
+  .sales-row-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+  }
+  .sales-label {
+	width: 4rem;
+	font-size: 1.4rem;
+	color: var(--gray-60);
+  }
+  .sales-input {
+	width: 16rem;
+	font-size: 1.7rem;
+  }
+  .sales-input input {
+	background: transparent;
+	border: 0;
+	padding: 0.8rem;
+	width: 100%;
+	font-weight: 500;
+	text-align: right;
+  }
+  .sales-add-btn {
+	color: var(--gray-40);
+	font-size: 2rem;
+	display: block;
+	padding: 1rem;
+	width: 100%;
+  }
+  .sales-calendar {
+	border-radius: 1.2rem;
+	border: 1px solid var(--gray-10);
+	margin-bottom: 2rem; /* min-width: 180rem; */
+  }
+  .sales-calendar .year-bg {
+	background: var(--gray-5);
+	text-align: center;
+	padding: 1rem 0;
+  }
+  .sales-calendar .amount {
+	justify-content: center;
+  }
+  .sales-calendar .amount.memo b {
+	position: relative;
+  }
+  .sales-calendar .amount.memo b::after {
+	content: "";
+	display: block;
+	width: 0.4rem;
+	height: 0.4rem;
+	border-radius: 50%;
+	background: var(--primary-30);
+	position: absolute;
+	right: -1rem;
+	top: 0;
+  }
+  .sales-calendar .amount.warning b::after {
+	background: #FF5555;
+  }
+  .sales-month-wrap {
+	display: flex;
+	gap: 1rem;
+	align-items: flex-start;
+	overflow-x: scroll;
+  }
+  .sales-month-wrap::-webkit-scrollbar-track {
+	background-color: var(--white);
+	border-radius: 0.3rem;
+  }
+  .sales-month-wrap::-webkit-scrollbar {
+	width: 0.6rem;
+	height: 0.6rem;
+  }
+  .sales-month-wrap::-webkit-scrollbar-thumb {
+	background-color: var(--gray-20);
+	border-radius: 0.3rem;
+  }
+  .sales-month {
+	text-align: center;
+	flex: 0 0 17rem;
+  }
+  .sales-month .month-title {
+	display: block;
+	text-align: center;
+	padding: 1rem;
+  }
+  
+  .wage-price {
+	background: var(--gray-5) !important;
+  }
+  .wage-price:nth-child(1) {
+	border-radius: 1.2rem 0 0 1.2rem;
+  }
+  .wage-price:nth-child(1)::before {
+	display: none;
+  }
+  .wage-price:nth-child(3) {
+	border-radius: 0 1.2rem 1.2rem 0;
+  }
+  
+  .blank + .actual-cost {
+	border-radius: 1.2rem 0 0 1.2rem;
+  }
+  
+  .actual-cost {
+	background: var(--primary-5) !important;
+  }
+  .actual-cost:last-child {
+	border-radius: 0 1.2rem 1.2rem 0;
+  }
+  
+  [class*=mem-date] [class*=time-] {
+	border-radius: 0.8rem;
+	cursor: pointer;
+  }
+  [class*=mem-date] .time-0 {
+	background: rgba(17, 136, 255, 0);
+	color: #888;
+  }
+  [class*=mem-date] .time-25 {
+	background: var(--primary-5);
+	color: var(--primary-30);
+  }
+  [class*=mem-date] .time-50 {
+	background: var(--primary-30);
+	color: var(--white);
+  }
+  [class*=mem-date] .time-75 {
+	background: var(--primary);
+	color: var(--white);
+  }
+  [class*=mem-date] .time-100 {
+	background: var(--primary-60);
+	color: var(--white);
+  }
+  
+  th.blank, td.blank {
+	background: var(--white) !important;
+	border-bottom: 0 !important;
+  }
+  th.blank::after, td.blank::after {
+	display: none;
+  }
+  
+  .mem-day-pop {
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+	transition: 0.2s ease;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 2rem;
+	background: var(--white);
+	border-radius: 1.2rem;
+  }
+  
+  .mem-day-expense {
+	position: relative;
+  }
+  .mem-day-expense.active .mem-day-pop {
+	opacity: 1;
+	visibility: visible;
+	height: auto;
+	width: 36rem;
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+  }
+  .mem-day-expense.active .mem-day-pop .title {
+	margin-bottom: 2rem;
+  }
+  .mem-day-expense.active .mem-day-pop .cont {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+  }
+  .mem-day-expense.active .mem-day-pop .cont .btn-day-expense {
+	margin-left: auto;
+  }
+  .mem-day-expense.active .mem-day-pop .btn-close {
+	position: absolute;
+	right: 2rem;
+	top: 2rem;
+  }
+  
+  .job-desc {
+	background: var(--gray-5);
+	border-radius: 0.4rem;
+	padding: 0.4rem 0.6rem;
+	font-size: 1.2rem;
+	color: var(--gray-60);
+  }
+  
+  .mem-compare {
+	display: flex;
+	gap: 4rem;
+	margin-top: 2rem;
+  }
+  .mem-plan {
+	background: var(--gray-5);
+	flex: 0 0 35%;
+  }
+  .mem-plan .label {
+	background: #7C7F91;
+  }
+  .mem-plan b {
+	color: var(--gray-80);
+  }
+  .mem-actual {
+	background: var(--primary-5);
+	flex: 1;
+  }
+  .mem-actual .label {
+	background: var(--primary);
+  }
+  .mem-actual b {
+	color: var(--primary);
+  }
+  .mem-sum {
+	margin-top: auto;
+	padding: 1.8rem 4rem;
+	text-align: center;
+	display: flex;
+	gap: 3rem;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1.2rem;
+  }
+  .mem-sum .label {
+	font-size: 1.4rem;
+	font-weight: 500;
+	border-radius: 0.4rem;
+	padding: 0.4rem 0.6rem;
+	color: var(--white);
+  }
+  .mem-sum b {
+	margin: 0 0.3rem;
+  }
+  .mem-date-count [class*=time-] {
+	padding: 2.8rem;
+  }
+  .mem-date-count [class*=time-].disable {
+	cursor: not-allowed;
+	pointer-events: none;
+	filter: grayscale(1);
+  }
+  .mem-date-count tbody td {
+	border-top: 0;
+  }
+  .mem-date-count tbody td span {
+	color: #222 !important;
+	position: absolute;
+	left: 1.6rem;
+	top: 1.6rem;
+  }
+  .mem-date-count tbody td strong {
+	font-size: 1.7rem;
+	display: block;
+  }
+  .mem-date-count tbody td small {
+	font-size: 1rem;
+	display: block;
+  }
+  .mem-day-expense .month {
+	text-align: center;
+	font-size: 1.8rem;
+	font-weight: 600;
+	margin-bottom: 2rem;
+  }
+  .mem-date-schedule table {
+	table-layout: fixed;
+  }
+  .mem-date-schedule table thead th {
+	background: var(--white);
+	border-radius: 0;
+  }
+  .mem-date-schedule table thead > tr:first-of-type > th {
+	background: #fafafa;
+  }
+  .mem-date-schedule table tbody th {
+	padding: 0.85rem 0;
+	background: var(--white);
+	border-bottom: 0;
+  }
+  .mem-date-schedule table tbody td {
+	padding: 0.5rem;
+	font-size: 1.3rem;
+	letter-spacing: -1px;
+	border-bottom: 0;
+  }
+  .mem-inner-price {
+	filter: blur(5px);
+  }
+  .mem-actual-cost-table tr.disable td:not(:has(.input-end-check)) {
+	cursor: not-allowed;
+	pointer-events: none;
+	filter: grayscale(1);
+  }
+  
+  .btn-mem-date,
+  .btn-mem-inner-price {
+	margin-left: 1rem;
+  }
+  
+  .btn-mem-date b {
+	font-size: 1.7rem;
+	font-weight: 500;
+	color: var(--gray-90);
+  }
+  .btn-mem-date small {
+	font-size: 1.6rem;
+	margin-left: 0.8rem;
+  }
+  .btn-mem-date::after {
+	color: var(--gray-40);
+	font-size: 1.4rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	transition: 0.2s;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+  }
+  .btn-mem-date:hover::after {
+	background: var(--gray-10);
+  }
+  
+  .btn-mem-inner-price::before {
+	content: "\ec16";
+	font-family: "remixicon";
+	font-size: 2rem;
+	color: var(--gray-40);
+  }
+  
+  #mem-inner-price tfoot {
+	color: #1188FF;
+	border: 1px solid rgba(17, 136, 255, 0.2);
+	background: var(--secondary-5);
+  }
+  
+  .random-cal {
+	margin-left: auto;
+	display: flex;
+	gap: 4rem;
+	align-items: center;
+  }
+  .random-cal .member-select {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+  }
+  .random-cal .btn-random-cal {
+	font-size: 1.6rem;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+  }
+  
+  .date-count {
+	display: flex;
+	gap: 0.4rem;
+	align-items: center;
+  }
+  .date-count b {
+	color: var(--primary);
+	font-size: 2.4rem;
+	padding: 0 1rem;
+	border-radius: 0.8rem;
+	min-width: 8rem;
+	text-align: right;
+  }
+  .date-count b.active {
+	background: var(--primary-5);
+  }
+  .date-count b.active:focus {
+	background: var(--white);
+	outline: 1px solid var(--primary-30);
+  }
+  

@@ -15,7 +15,7 @@ const PageTitle = () => {
 	return (
 		<div className="page-title-wrap">
 			<h2 className="page-title">{title}</h2>
-			{filterPaths.includes(currentPath) && <ItemLayer itemName="typeItem"/>}
+			{filterPaths.includes(currentPath) && <ItemLayer itemName="deptItem"/>}
 		</div>
 	);
 };

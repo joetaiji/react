@@ -1,30 +1,336 @@
-/* SalesFlow specific styles */
-.sales-flow-container {
-    padding: var(--spacing-lg);
-}
-
-.flow-chart {
-    margin: var(--spacing-lg) 0;
-}
-
-.flow-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-}
-
-.flow-card {
-    background: var(--white);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-lg);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.search-container {
-    margin-bottom: var(--spacing-lg);
-}
-
-.table-container {
-    margin-bottom: var(--spacing-lg);
-} 
+/* =======================================================================================
+03.매출관리 & 04.지출관리 
+======================================================================================= */
+.amount-target {
+	border-radius: 1.2rem;
+	color: var(--white);
+	padding: 1.6rem 6rem;
+	background: linear-gradient(92deg, var(--secondary-30) 6.24%, var(--primary-30) 84.83%);
+	margin-bottom: 1.2rem;
+	font-size: 2rem;
+	display: flex;
+	gap: 3rem;
+	align-items: center;
+  }
+  .amount-target strong {
+	font-weight: 700;
+  }
+  .amount-target > div {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  .amount-target .ri-bar-chart-fill {
+	opacity: 0.5;
+	margin-right: 0.8rem;
+	font-size: 2.2rem;
+	font-weight: 400;
+  }
+  .amount-target .amount {
+	color: inherit;
+	font-weight: 700;
+	font-size: 2rem;
+  }
+  .amount-target .amount small {
+	color: inherit;
+  }
+  .amount-target .target-slogan {
+	position: relative;
+	padding-left: 3rem;
+  }
+  .amount-target .target-slogan::before {
+	content: "";
+	background-color: rgba(255, 255, 255, 0.3);
+	width: 1px;
+	height: 1.6rem;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	translate: 0 -50%;
+  }
+  .amount-target .target-slogan button {
+	background: rgba(0, 0, 0, 0.2);
+	padding: 0.6rem 0.8rem;
+	font-size: 1.5rem;
+	border-radius: 0.6rem;
+	margin-left: auto;
+	transition: 0.2s;
+  }
+  .amount-target .target-slogan button i {
+	margin-right: 0.4rem;
+  }
+  .amount-target .target-slogan button:hover {
+	background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .amount-stat {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 4rem;
+  }
+  .amount-stat .amount {
+	font-size: 2rem;
+	font-weight: 700;
+  }
+  .amount-stat .amount-area {
+	display: flex;
+	gap: 0.5rem 1rem;
+	align-items: center;
+  }
+  .amount-stat .amount-area .graph-percent {
+	color: #00062c;
+	font-size: 1.4rem;
+	font-weight: 500;
+	display: flex;
+	gap: 0.4rem;
+	align-items: center;
+  }
+  .amount-stat > div {
+	flex: 1;
+	min-width: 73.5rem;
+	padding: 2rem;
+	border-radius: 1.2rem;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 1fr 1fr;
+  }
+  .amount-stat > div .group {
+	background: var(--white);
+	padding: 2rem 3rem;
+	border-radius: 1.2rem;
+  }
+  .amount-stat > div .group .title {
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: var(--gray-90);
+  }
+  .amount-stat > div .group .list-dot {
+	margin-top: 2rem;
+  }
+  .amount-stat > div .group .list-dot li {
+	display: flex;
+	gap: 0.8rem;
+	align-items: center;
+	border-bottom: 1px solid var(--gray-10);
+	padding-bottom: 0.6rem;
+  }
+  .amount-stat > div .group .list-dot li .dept {
+	font-size: 1.5rem;
+	color: #00062C;
+	min-width: 8rem;
+  }
+  .amount-stat > div .group .list-dot li .subject {
+	font-size: 1.6rem;
+	color: var(--gray-70);
+  }
+  .amount-stat > div .group .list-dot li .amount {
+	font-size: 1.8rem;
+	font-weight: 500;
+	margin-left: auto;
+  }
+  .amount-stat > div .group .list-dot li:last-child {
+	border-bottom: 0;
+  }
+  .amount-stat-confirm-area {
+	background: var(--secondary-5);
+  }
+  .amount-stat-confirm .title {
+	display: flex;
+	gap: 0.6rem;
+	align-items: center;
+  }
+  .amount-stat-confirm .row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  .amount-stat-confirm .row2 {
+	border-top: 1px solid var(--gray-10);
+	margin-top: 1rem;
+	padding-top: 1rem;
+  }
+  .amount-stat-confirm .row2 .amount {
+	color: var(--primary-30);
+  }
+  .amount-stat-confirm .row2 .date {
+	color: var(--gray-70);
+	font-size: 1.5rem;
+	padding: 0.4rem 0.6rem;
+	border-radius: 0.4rem;
+	transition: 0.2s;
+  }
+  .amount-stat-confirm .row2 .date:hover {
+	background-color: var(--gray-5);
+	color: var(--gray-90);
+  }
+  .amount-stat-confirm .row2 .date i {
+	font-size: 1.6rem;
+	color: var(--gray-40);
+  }
+  .amount-stat-confirm-detail {
+	display: grid;
+	gap: 1rem 8rem;
+	grid-template-columns: 1fr 1fr;
+  }
+  .amount-stat-confirm-detail .group-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  .amount-stat-confirm-detail .group-item .s-title {
+	font-size: 1.6rem;
+	font-weight: 500;
+  }
+  .amount-stat-confirm-detail .group-item .amount {
+	font-size: 1.8rem;
+	font-weight: 500;
+  }
+  .amount-stat-actual {
+	display: flex;
+	align-items: flex-start;
+  }
+  .amount-stat-actual .amount {
+	color: var(--secondary-30);
+  }
+  .amount-stat-actual .amount-area {
+	margin-left: auto;
+	flex-direction: column;
+	align-items: flex-end;
+  }
+  .amount-stat-outstand {
+	display: flex;
+	align-items: flex-start;
+  }
+  .amount-stat-outstand .amount {
+	color: #FF5555;
+  }
+  .amount-stat-outstand .amount-area {
+	margin-left: auto;
+	flex-direction: column;
+	align-items: flex-end;
+  }
+  .amount-stat-recent {
+	padding-top: 3rem !important;
+	padding-bottom: 3rem !important;
+  }
+  .amount-stat-expect-area {
+	background: var(--primary-5);
+  }
+  .amount-stat-expect-area .amount-area {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  .amount-stat-expect-cal {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  .amount-stat-expect-cal button {
+	font-size: 2.8rem;
+	color: var(--gray-90);
+  }
+  .amount-stat-expect-cal button i {
+	display: block;
+	transition: 0.2s;
+  }
+  .amount-stat-expect-cal .prev-month:hover i {
+	transform: translateX(-1rem);
+  }
+  .amount-stat-expect-cal .next-month:hover i {
+	transform: translateX(1rem);
+  }
+  .amount-stat-expect-sum {
+	flex: 1;
+	padding-top: 3rem !important;
+	padding-bottom: 3rem !important;
+  }
+  .amount-stat-expect-sum .title {
+	display: block;
+	border-bottom: 1px solid var(--gray-10);
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+  }
+  .amount-stat-expect-sum .compare-month {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+  }
+  .amount-stat-expect-sum .compare-month .label {
+	font-size: 1.5rem;
+	color: var(--gray-40);
+	font-weight: 500;
+  }
+  .amount-stat-expect-sum .compare-month .value {
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+  }
+  .amount-stat-expect-sum .compare-month .value::before {
+	content: "";
+	font-size: 2rem;
+	display: block;
+  }
+  .amount-stat-expect-sum .compare-month .value.up {
+	color: var(--point-30);
+  }
+  .amount-stat-expect-sum .compare-month .value.up::before {
+	content: "\ea77";
+	font-family: "remixicon";
+  }
+  .amount-stat-expect-sum .compare-month .value.down {
+	color: var(--secondary-30);
+  }
+  .amount-stat-expect-sum .compare-month .value.down::before {
+	content: "\ea4d";
+	font-family: "remixicon";
+  }
+  .amount-stat-expect-dept {
+	flex: 1;
+	padding-top: 3rem !important;
+	padding-bottom: 3rem !important;
+  }
+  .amount-stat-expect-dept .title {
+	display: block;
+	border-bottom: 1px solid var(--gray-10);
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+  }
+  .amount-stat-expect-dept .form-control {
+	width: 12rem;
+  }
+  .amount-stat-expect-dept > div {
+	display: none;
+  }
+  .amount-stat-expect-dept > div.active {
+	display: block;
+  }
+  
+  .amount-stat-detail {
+	border-radius: 1.2rem;
+	border: 1px solid #EAEAEA;
+	background: var(--white);
+	padding: 3rem;
+  }
+  .amount-stat-detail .graph-area {
+	height: 50rem;
+  }
+  
+  .ifrs-item {
+	display: flex;
+	gap: 0.8rem;
+	align-items: center;
+	justify-content: flex-end;
+  }
+  .ifrs-item small {
+	font-size: 1.2rem;
+	background: var(--primary-5);
+	color: var(--primary-30);
+	padding: 0.4rem 0.6rem;
+	border-radius: 0.4rem;
+  }
+  .ifrs-item span {
+	padding-right: 0.8rem;
+  }
+  

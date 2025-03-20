@@ -1,6 +1,9 @@
 
 import React from 'react';
-import profileImage from '../../assets/images/profiles/photo_1.png';	
+import Search from '../../components/ui/Search';
+import Filter from '../../components/ui/Filter';
+import Table from '../../components/ui/Table';
+import Pagination from '../../components/ui/Pagination';
 import './Sales.css';
 
 const Sales = () => {   
@@ -172,150 +175,14 @@ const Sales = () => {
 
             {/* 매출 통계 상세 */}
             <div className="amount-stat-detail">
-                <div className="sch-input">
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        name="allKeyWord" 
-                        placeholder="지출 키워드 입력" 
-                        defaultValue=""
-                        title="지출 키워드 입력"
-                    />
-                    <button type="submit" className="btn sch-btn">
-                        <i className="ri-search-2-line" />
-                        <span className="sr-only">검색</span>
-                    </button>
-                </div>
-
-                
-
+                <Search />
+                <Filter />
                 <div className="graph-area graph-type1">
                     <div id="salesChart" className="chart-div" />
                 </div>
 
-                <div className="table sortable">
-                    <table>
-                        <colgroup>
-                            <col className="w3" />
-                            <col className="w8" />
-                            <col />
-                            <col className="w8" />
-                            <col span="3" className="w12" />
-                            <col className="w6" />
-                        </colgroup>
-                        <caption></caption>
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">부서</th>
-                                <th scope="col">프로젝트명</th>
-                                <th scope="col">담당자</th>
-                                <th scope="col">금액</th>
-                                <th scope="col">계산서 발행일</th>
-                                <th scope="col">입금일</th>
-                                <th scope="col">상태</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="row-btn-control">
-                                    <div className="user-group">
-                                        <span className="user-icon">
-                                            <img src={profileImage} alt="" />	
-                                        </span>
-                                        <span className="user-icon">김</span>
-                                        <span className="user-icon">정</span>
-                                        <span className="user-sum">+2명</span>
-                                    </div>
-                                    <span className="btn-draggable"><i className="ri-draggable"></i></span>
-                                </td>
-                                <td><span data-layer="dept" contenteditable>MX</span></td>
-                                <td><span data-layer="project" contenteditable>2024년 연구개발특구진흥재단 홈페이지 기능 개선 및 유지보수 용역</span>
-                                </td>
-                                <td><span data-layer="manager" contenteditable><span className="user-icon">김</span> 김정서</span>
-                                </td>
-                                <td><span className="amount" contenteditable>51,840,000</span></td>
-                                <td><span className="input-date ic-cal"><input type="text" className="form-control" defaultValue="2025-02-30" /></span></td>
-                                <td><span className="input-date ic-cal"><input type="text" className="form-control" defaultValue="2025-12-31" /></span></td>
-                                <td><span data-layer="status"><span className="state hold">미수</span></span></td>
-                            </tr>
-                            <tr>
-                                <td className="row-btn-control">
-                                    <div className="user-group">
-                                        <span className="user-icon">조</span>
-                                        <span className="user-icon">최</span>
-                                        <span className="user-icon">류</span>
-                                        <span className="user-sum">+10명</span>
-                                    </div>
-                                    <span className="btn-draggable"><i className="ri-draggable"></i></span>
-                                </td>
-                                <td><span data-layer="dept" contenteditable>EX</span></td>
-                                <td><span data-layer="project" contenteditable>양성자가속기 장비이력관리시스템 고도화 및 유지보수 위탁용역</span></td>
-                                <td><span data-layer="manager" contenteditable><span className="user-icon">이</span> 이상민</span>
-                                </td>
-                                <td><span className="amount" contenteditable>55,000,000</span></td>
-                                <td><span className="input-date ic-cal"><input type="text" className="form-control" defaultValue="2024-08-30" /></span></td>
-                                <td><span className="input-date ic-cal"><input type="text" className="form-control" defaultValue="2025-05-12" /></span></td>
-                                <td><span data-layer="status"><span className="state ing">진행</span></span></td>
-                            </tr>
-                            <tr>
-                                <td className="row-btn-control">
-                                    <div className="user-group">
-                                        <span className="user-icon">이</span>
-                                        <span className="user-icon">
-                                            <img src={profileImage} alt="" />
-                                        </span>
-                                        <span className="user-icon">최</span>
-                                        <span className="user-sum">+6명</span>
-                                    </div>
-                                    <span className="btn-draggable"><i className="ri-draggable" /></span>
-                                </td>
-                                <td><span data-layer="dept" contenteditable>DX</span></td>
-                                <td><span data-layer="project" contenteditable>클라우드컴퓨팅서비스 이용</span></td>
-                                <td><span data-layer="manager" contenteditable><span className="user-icon">원</span> 원미정</span></td>
-                                <td>
-                                    <span className="amount" contenteditable>19,252,134</span>
-                                    <div className="ifrs-item">
-                                        <small>당해년도 IFRS</small><span>5,000,000</span>
-                                    </div>
-                                </td>
-                                <td><span className="input-date ic-cal"><input type="text" className="form-control" defaultValue="2024-09-03" /></span></td>
-                                <td><span className="input-date ic-cal"><input type="text" className="form-control" defaultValue="2024-09-13" /></span></td>
-                                <td><span data-layer="status"><span className="state end">입금</span></span></td>
-                            </tr>
-                            <tr>
-                                <td className="row-btn-control">
-                                    <div className="user-group">
-                                        <span className="user-icon">
-											<img src={profileImage} alt="" />
-                                        </span>
-                                        <span className="user-icon">허</span>
-                                        <span className="user-icon">조</span>
-                                    </div>
-                                    <span className="btn-draggable"><i className="ri-draggable"></i></span>
-                                </td>
-                                <td><span data-layer="dept" contenteditable>EX</span></td>
-                                <td><span data-layer="project" contenteditable>(NIGT) 웹 기반 글로벌 R&amp;D 전략지도 정보시스템 구축</span></td>
-                                <td>
-                                    <span data-layer="manager" contenteditable>
-                                        <span className="user-icon">
-                                            <img src={profileImage} alt="" />
-                                        </span> 김소영
-                                    </span>
-                                </td>
-                                <td>
-                                    <span className="amount" contenteditable>10,000,000</span>
-                                    <div className="ifrs-item">
-                                        <small>당해년도 IFRS</small><span>5,000,000</span>
-                                    </div>
-                                </td>
-                                <td><span className="input-date ic-cal"><input type="text" className="form-control" defaultValue="2024-09-03" /></span></td>
-                                <td><span className="input-date ic-cal"><input type="text" className="form-control" defaultValue="2025-03-02" /></span></td>
-                                <td><span data-layer="status"><span className="state ing">진행</span></span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <Table />
+				<Pagination />
             </div>
         </div>
     );

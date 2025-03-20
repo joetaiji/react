@@ -26,9 +26,112 @@
 	background-color: var(--gray-5);
 	color: var(--gray-90);
   }
-  .page-title-bar .filter {
+  .page-title-area .filter {
     display: flex;
     gap: 0.6rem;
     margin-bottom: 0;
     height: 4rem;
 }
+
+.page-title-area {
+	display: flex;
+	gap: 1.4rem;
+	align-items: center;
+	margin-bottom: 2rem;
+  }
+  .page-title-area .page-title,
+  .page-title-area .heading-m {
+	margin-bottom: 0;
+  }
+  .page-title-area .filter {
+	display: flex;
+	gap: 0.6rem;
+	margin-bottom: 0;
+	height: 4rem;
+  }
+  .page-title-area .filter-item {
+	display: inline-flex;
+	align-items: center;
+	padding: 0 1.2rem;
+	border-radius: 2rem;
+	margin: 0;
+  }
+  .page-title-area .filter-item:hover .item-add {
+	border: 0;
+  }
+  .page-title-area .filter-item .item-add {
+	border-radius: 2rem;
+  }
+  .page-title-area .filter-item > .item-cont {
+	padding: 0;
+	height: 100%;
+	color: var(--gray-90);
+	cursor: pointer;
+  }
+  .page-title-area .filter-item > .item-cont::before {
+	font-family: "remixicon";
+	color: var(--gray-35);
+	font-size: 1.6rem;
+  }
+  .page-title-area .filter-item > .item-cont::after {
+	content: "\ea4e";
+	display: block;
+	font-family: "remixicon";
+	color: var(--gray-35);
+	font-size: 1.6rem;
+  }
+  .page-title-area .filter-item > .item-cont > .item {
+	padding: 0;
+	background: transparent;
+  }
+  .page-title-area .filter-item > .item-cont > .item.selected {
+	border: 0;
+  }
+  .page-title-area .filter-item > .item-cont .item + .item-basic {
+	display: none;
+  }
+  .page-title-area .filter-item > .item-cont input {
+	cursor: pointer;
+  }
+  .page-title-area .filter-item:has(.item-cont:focus) {
+	border-color: var(--primary-30);
+  }
+  .page-title-area .filter-item .item-layer {
+	width: 37rem;
+  }
+  .page-title-area .filter-item.dept-item > .item-cont::before {
+	content: "\efb8";
+  }
+  .page-title-area .filter-item.admin-item > .item-cont::before {
+	content: "\f264";
+	border-radius: 50%;
+	width: 2rem;
+	height: 2rem;
+	min-width: 2rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--gray-35);
+  }
+  .page-title-area .filter-item.date-item {
+	padding: 0;
+  }
+  .page-title-area .filter-item.date-item > .item-cont::before {
+	position: absolute;
+	left: 1rem;
+	top: 50%;
+	translate: 0 -50%;
+  }
+  .page-title-area .filter-item.date-item > .item-cont::after {
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	translate: 0 -50%;
+  }
+  .page-title-area .filter-item.date-item .form-control {
+	width: auto; /* height: 100%; */
+	background: transparent;
+	padding: 0.9rem 3.5rem;
+	border-radius: 2rem;
+  }
+  
