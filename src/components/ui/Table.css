@@ -170,6 +170,7 @@
 .table .input-date input,
 .table span[data-layer] {
   cursor: pointer;
+  display: block;
 }
 .table.narrow th, .table.narrow td {
   padding: 0.8rem 0.2rem;

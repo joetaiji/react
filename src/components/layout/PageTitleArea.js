@@ -1,13 +1,13 @@
 import React from 'react';
 import PageTitle from './PageTitle';
-import Button from '../ui/Button';
-import './PageTitleArea.css';
+import Util from '../ui/Util';
+import styles from'./PageTitleArea.module.css';
 
 const PageTitleArea = () => {
     return (
-        <div className="page-title-area">
+        <div className={styles['page-title-area']}>
 			<PageTitle />
-			<Button />
+			<Util />
         </div>
     );
 };

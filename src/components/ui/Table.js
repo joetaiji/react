@@ -65,7 +65,7 @@ const Table = () => {
                 <span className="btn-draggable"><i className="ri-draggable"></i></span>
               </td>
               <td>
-                <span data-layer="typeItem" contentEditable>홈페이지구축, 유지보수</span>
+                <span data-layer="typeItem">홈페이지구축, 유지보수</span>
               </td>
               <td>
                 <span data-layer="projectItem" contentEditable>2024년 연구개발특구진흥재단 홈페이지 기능 개선 및 유지보수 용역</span>
@@ -116,7 +116,7 @@ const Table = () => {
           </tbody>
         </table>
       </div>
-      <ItemLayer activeLayer={activeLayer} />
+      <ItemLayer activeLayer={activeLayer} setActiveLayer={setActiveLayer} />
     </div>
   );
 };

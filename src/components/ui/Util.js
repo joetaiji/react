@@ -1,7 +1,6 @@
 import React from 'react';
-import './Button.css';
 
-export default function Button() {
+export default function Util() {
 	function print() {
 		window.print();
 	}

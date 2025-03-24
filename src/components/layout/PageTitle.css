@@ -3,6 +3,9 @@
 	display: flex;
 	gap: 1.4rem;
   }
+  .page-title-wrap .layer-container {
+	position: relative;
+  }
   .page-title-area .page-title {
 	height: 4rem;
 	font-size: 2.4rem;
