@@ -1,6 +1,10 @@
 import React from 'react';
 import './Dashboard.css';
 import Tooltip from '../../components/ui/Tooltip';
+import DbSalesChart from '../../components/charts/DbSalesChart';
+import DbMemberChart from '../../components/charts/DbMemberChart';
+import DbCustomerChart from '../../components/charts/DbCustomerChart';
+import Calendar from '../../components/calendar/Calendar';
 
 const Dashboard = () => {
     return (
@@ -43,11 +47,7 @@ const Dashboard = () => {
 							</div>
 							{/* //sales-stats */}
 							<div className="sales-graph graph-area">
-								<script>
-									{/* am5 chart script */}
-								</script>
-								<div id="salesChart" className="chart-div"></div>
-								
+								<DbSalesChart />
 							</div>
 							{/* //sales-graph */}
 						</div>
@@ -58,98 +58,14 @@ const Dashboard = () => {
 							<span className="prev-day">전일대비 <b className="point">+ 3명</b></span>
 
 							<div className="graph-area">
-								<script>
-									{/* am5 chart script */}
-								</script>
-								<div id="memberChart" className="chart-div"></div>
+								<DbMemberChart />
 							</div>
-							
 						</div>
 						{/* //매출 이익 박스 */}
 					</div>
 					<div className="box dashboard-calendar">
 						<h3 className="heading-m">캘린더</h3>
-						
-						<div className="calendar-legend cell-view-set">
-							<button className="btn-cell-set sm" aria-expanded="false">보기 설정</button>
-							<div className="item-layer">
-								<div className="title">
-									<strong>보기 설정</strong>
-									<button type="button" className="btn-reset">
-										<i className="ri-restart-line"></i>
-										<span>기본설정</span>
-									</button>
-								</div>		
-								<div className="cont">						
-									<div className="scont scont-on">									
-										<label className="cell-item"><input type="checkbox" data-col="1" name="schedule-1" value="Y" defaultChecked />회사</label>
-										<label className="cell-item"><input type="checkbox" data-col="2" name="schedule-2" value="Y" defaultChecked />대관</label>
-										<label className="cell-item"><input type="checkbox" data-col="4" name="schedule-4" value="Y" defaultChecked />생일 및 입사</label>
-										<label className="cell-item"><input type="checkbox" data-col="5" name="schedule-5" value="Y" defaultChecked />내일정</label>
-										
-									</div>	
-									<div className="stitle">
-										<strong className="s-title">숨기기</strong>
-										<button className="item-all">모두보기</button>
-									</div>	
-									<div className="scont scont-off">
-										<label className="cell-item off"><input type="checkbox" data-col="3" name="schedule-3" value="N" />휴가</label>
-									</div>
-								</div>					
-							</div>
-							{/* //item-layer */}
-						</div>
-						<div id="calendar"></div>
-						<script>
-							{/* Calendar script */}
-						</script>
-
-						<div className="schedule-detail">
-							<button className="btn-schedule">상세일정 <i className="ri-arrow-down-s-line"></i></button>
-							<div className="schedule-item schedule-2">
-								<div className="schedule-info">
-									<span className="date">입금 <b>D+3</b></span>
-									<strong className="title">한국에너지기술연구원 대표홈페이지 메인디자인 개편</strong>
-									<small className="orderer">한국에너지기술연구원</small>
-									<span className="amount">
-										<span className="label">매출/입금액</span>
-										<b>123,456,789,000</b>
-										<small>원</small>
-									</span>
-								</div>
-								<div className="schedule-cont">
-									<p>메모한 내용이 들어갑니다. 메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이
-										들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.</p>
-								</div>
-							</div>
-							<div className="schedule-item schedule-4">
-								<div className="schedule-info">
-									<span className="date">지출 <b>D+3</b></span>
-									<strong className="title">한국에너지기술연구원 대표홈페이지 메인디자인 개편</strong>
-									<small className="orderer">한국에너지기술연구원</small>
-									<span className="amount">
-										<span className="label">누적미수금</span>
-										<b>123,456,789,000</b>
-										<small>원</small>
-									</span>
-								</div>
-								<div className="schedule-cont">
-									<p>메모한 내용이 들어갑니다. 메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이
-										들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.</p>
-								</div>
-							</div>
-							<div className="schedule-item">
-								<div className="schedule-info">
-									<strong className="title">한국에너지기술연구원 대표홈페이지 메인디자인 개편</strong>
-									<small className="orderer">한국에너지기술연구원</small>
-								</div>
-								<div className="schedule-cont">
-									<p>메모한 내용이 들어갑니다. 메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이
-										들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.메모한 내용이 들어갑니다.</p>
-								</div>
-							</div>
-						</div>
-
+						<Calendar />
 					</div>
 				</div>
 				{/* //col-main */}
@@ -160,7 +76,6 @@ const Dashboard = () => {
 						<div className="tabs">
 							<ul className="depth4">
 								<li className="tab-nav1 active">
-									
 									<button>개인</button>
 									<div className="tab-cont">	
 										<Tooltip />	
@@ -264,14 +179,9 @@ const Dashboard = () => {
 
 					<div className="customer-percent box">
 						<h3 className="heading-m">우리 부서 고객 점유율</h3>
-						{/* Chart code */}
 						<div className="graph-area">
-							<script>
-								{/* am5 chart script */}
-							</script>
-							<div id="customerChart" className="chart-div"></div>
+							<DbCustomerChart />
 						</div>
-						{/* //graph-area */}
 					</div>
 					{/* //우리 부서 고객 점유율 */}
 

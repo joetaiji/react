@@ -32,7 +32,14 @@
 	},
 	"description": "",
 	"dependencies": {
+		"@amcharts/amcharts5": "^5.11.2",
+		"@fullcalendar/core": "^6.1.15",
+		"@fullcalendar/daygrid": "^6.1.15",
+		"@fullcalendar/interaction": "^6.1.15",
+		"@fullcalendar/react": "^6.1.15",
+		"@fullcalendar/timegrid": "^6.1.15",
 		"react": "^19.0.0",
+		"react-datepicker": "^8.2.1",
 		"react-dom": "^19.0.0",
 		"react-router-dom": "^7.3.0",
 		"swiper": "^11.2.5"

@@ -7,6 +7,8 @@ import CellSetting from '../../components/ui/CellSetting';
 import './Project.css';
 
 const Project = () => {
+
+
 	return (
 		<div className="project-container">
 			<Search />

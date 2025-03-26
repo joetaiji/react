@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 // Suspense는 컴포넌트가 로딩될 때까지 대기 상태를 표시할 수 있게 해주는 React 기능입니다.
 // lazy와 함께 사용하여 코드 분할(code splitting)을 구현합니다.
 import { lazy, Suspense } from 'react';
@@ -108,6 +108,7 @@ const AppContent = () => {
 						<Suspense fallback={<div>Loading...</div>}>
 							<Routes>
 								{/* Main routes */}
+								<Route path="/" element={<Navigate to="/dashboard" replace />} />
 								<Route path="/dashboard" element={<Dashboard />} />
 								<Route path="/project" element={<Project />} />					
 								

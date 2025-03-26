@@ -7,10 +7,18 @@
 	width: 100%;
 	
   }
-  
+
   .sch-input {
 	position: relative;
 	margin-bottom: 4rem;
+  }
+  .sch-input:has(+ :global(.filter)) {  
+	margin-bottom: 0;
+	.form-control {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border-bottom: 0;
+	}
   }
   .sch-input .form-control {
 	width: 100%;
@@ -33,11 +41,4 @@
 	border: 0;
 	font-size: 2.4rem;
   }
-  .sch-input:has(~ .filter.active, ~ .filter.setting) {
-	margin-bottom: 0;
-	.form-control {
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-		border-bottom: 0;
-	}
-  }
+ 

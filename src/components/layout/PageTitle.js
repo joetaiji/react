@@ -1,35 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { PAGE_TITLES } from '../../constants/pageTitles';
-import ItemLayer from '../ui/ItemLayer';
 import './PageTitle.css';
 
 const PageTitle = () => {
 	const location = useLocation();
 	const title = PAGE_TITLES[location.pathname] || '대시보드';
-	const currentPath = location.pathname;
-
-	const [activeLayer, setActiveLayer] = useState(null);
-
-	const handleLayerClick = (e) => {
-		const layerType = e.target.closest('[data-layer]')?.dataset.layer;
-		if (layerType) {
-			setActiveLayer(layerType);
-		}
-	};
-
-	// 필터가 필요한 경로 정의
-	const filterPaths = ['/sales', '/sales/flow', '/sales/performance', '/expense', '/expense/outsourcing', '/expense/management'];
 
 	return (
 		<div className='page-title-wrap'>
 			<h2 className='page-title'>{title}</h2>
-			{filterPaths.includes(currentPath) && (
-				<div className='layer-container'>
-					<span data-layer="deptItem" onClick={handleLayerClick}>부서</span>
-					<ItemLayer activeLayer={activeLayer} setActiveLayer={setActiveLayer} />
-				</div>
-			)}
 		</div>
 	);
 };

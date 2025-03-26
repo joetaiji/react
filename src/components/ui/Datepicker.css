@@ -1,0 +1,158 @@
+.term-date.ic-cal::before,
+.input-date.ic-cal::before {
+  margin-right: 0;
+}
+.term-date.ic-cal .form-control,
+.input-date.ic-cal .form-control { /* padding: 1rem; */
+	border: 0;
+	background: var(--white);
+	border-radius: 0.8rem;
+	padding: 0.5rem 1rem;
+	min-width: 8.4rem;
+	field-sizing: content;
+	color: var(--gray-90);
+	outline: 1px solid transparent;
+	transition: 0.2s;
+	outline-offset: -1px;
+	cursor: pointer;
+}
+
+[data-item=amount] input[type=range]::-moz-range-thumb,
+.amount-item input[type=range]::-moz-range-thumb {
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.datepicker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 30 !important;
+  display: none;
+  width: 26rem;
+  min-height: 15rem;
+  background: var(--white);
+  border-radius: 1.2rem;
+  padding: 1rem;
+  z-index: 10;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.datepicker .prev, .datepicker .next {
+  font-size: 0;
+  color: var(--white);
+  text-align: center;
+}
+.datepicker .prev::before, .datepicker .next::before {
+  content: "";
+  display: block;
+  font-family: "remixicon";
+  font-size: 1.5rem;
+  color: var(--gray-40);
+  cursor: pointer;
+}
+.datepicker .prev::before {
+  content: "\ea64";
+}
+.datepicker .next::before {
+  content: "\ea6e";
+}
+.datepicker .datepicker-switch {
+  font-size: 1.6rem;
+  color: var(--gray-90);
+  padding: 1rem 0;
+  text-align: center;
+}
+.datepicker .active {
+  background: var(--primary-30) !important;
+  color: var(--white) !important;
+  border-radius: 0.4rem;
+}
+.datepicker .dow,
+.datepicker .old,
+.datepicker .new {
+  color: var(--gray-40) !important;
+}
+.datepicker .dow {
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+.datepicker .day {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--gray-90);
+  cursor: pointer;
+}
+.datepicker .day.today {
+  background: var(--gray-10);
+  border-radius: 0.4rem;
+}
+.datepicker .day.selected {
+  background: var(--primary-30) !important;
+}
+.datepicker .day.selected.range-start {
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+.datepicker .day.selected.range-start.range-end {
+  border-radius: 0.4rem;
+}
+.datepicker .day.selected.range-end {
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+.datepicker .day.range {
+  background: var(--primary-5);
+}
+.datepicker .month,
+.datepicker .year,
+.datepicker .decade,
+.datepicker .century {
+  font-size: 1.6rem;
+  color: var(--gray-90);
+  display: flex;
+  align-items: center;
+  justify-content: cneter;
+  border-radius: 50%;
+  width: 5.6rem;
+  height: 5.6rem;
+  min-width: 5.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.datepicker .month:hover,
+.datepicker .year:hover,
+.datepicker .decade:hover,
+.datepicker .century:hover {
+  background: var(--primary-5);
+}
+.datepicker tfoot {
+  position: relative;
+  height: 3rem;
+  font-size: 1.3rem;
+}
+.datepicker tfoot .today {
+  position: absolute;
+  left: 1rem;
+  bottom: 0;
+  color: var(--gray-40);
+  cursor: pointer;
+}
+.datepicker tfoot .today:hover {
+  color: var(--primary);
+}
+.datepicker tfoot .clear {
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  color: var(--gray-90);
+  cursor: pointer;
+}

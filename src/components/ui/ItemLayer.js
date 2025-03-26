@@ -26,13 +26,7 @@ const ItemLayer = ({ activeLayer, setActiveLayer }) => {
 			const clickedElement = document.querySelector(`[data-layer="${activeLayer}"]`);
 			if (clickedElement) {
 				const rect = clickedElement.getBoundingClientRect();
-				
-				// 클릭한 요소의 컨텍스트 확인
-				const isInPageTitle = clickedElement.closest('.page-title-wrap');
-				const container = isInPageTitle 
-					? clickedElement.closest('.page-title-wrap')
-					: clickedElement.closest('.table-container');
-				
+				const container = clickedElement.closest('.table-container');
 				const containerRect = container.getBoundingClientRect();
 
 				// 클릭한 요소의 위치를 기준으로 레이어 위치 계산
@@ -46,6 +40,24 @@ const ItemLayer = ({ activeLayer, setActiveLayer }) => {
 			setIsVisible(false);
 		}
 	}, [activeLayer]);
+
+	const handleItemClick = (e, item) => {
+		const itemElement = e.currentTarget;
+		const input = itemElement.querySelector('.form-control');
+		const itemBlank = document.querySelector('.item-blank');
+
+		if (input) {
+			// input이 있는 경우 (change 이벤트)
+			if (itemBlank) {
+				itemBlank.innerHTML = input.value;
+			}
+		} else {
+			// input이 없는 경우 (click 이벤트)
+			if (itemBlank) {
+				itemBlank.innerHTML = itemElement.innerHTML;
+			}
+		}
+	};
 
 	const layerData = itemData[activeLayer];
 	if (!isVisible || !layerData) return null;
@@ -66,8 +78,17 @@ const ItemLayer = ({ activeLayer, setActiveLayer }) => {
 			</div>					
 			<div className="item-group">
 				{layerData.items.map((item) => (
-					<div key={item.type} className="item">
-						<button type="button" className="item-btn">
+					<div 
+						key={item.type} 
+						className="item"
+						onClick={(e) => handleItemClick(e, item)}
+					>
+						<button 
+							type="button" 
+							className="item-btn" 
+							style={item.image ? { "--profile-image": `url(${item.image})` } : undefined}
+							data-first-letter={activeLayer === 'managerItem' && !item.image ? item.name.charAt(0) : undefined}
+						>
 							{item.name}
 						</button>
 					</div>
