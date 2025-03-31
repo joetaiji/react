@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './CellSetting.css';
 
 const CellSetting = () => {
- 
+  const [isActive, setIsActive] = useState(false);
+  const cellViewRef = useRef(null);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (cellViewRef.current && !cellViewRef.current.contains(e.target)) {
+        setIsActive(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, []);
 
   return (
-    <div className="cell-view-set">
-		<button className="btn-cell-set sm">보기 설정</button>
+    <div className={`cell-view-set ${isActive ? 'active' : ''}`} ref={cellViewRef}>
+		<button className="btn-cell-set sm" onClick={handleClick}>보기 설정</button>
 		<div className="item-layer">
 			<div className="title">
 				<strong>보기 설정</strong>

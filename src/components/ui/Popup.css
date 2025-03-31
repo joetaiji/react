@@ -2,32 +2,25 @@
 popup-wrap
 ======================================================================================= */
 .popup-wrap {
-  display: none;
   position: fixed;
-  left: 0;
   top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  padding: 1rem;
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 .popup-wrap .popup {
-  background: var(--white);
-  border-radius: 2rem 0 0 2rem;
-  display: flex;
-  flex-direction: column;
-  max-width: 136rem;
-  width: 100%;
-  padding: 4rem;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  transform: translateX(100%);
-  overflow: hidden;
-  transition: 0.2s 0.2s; /* @include flex($fd:column); display: none; width: 100%; height: 100%; padding: 4rem; position: relative; */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  min-width: 300px;
+  max-width: 90%;
+  overflow-y: auto;
 }
 .popup-wrap .popup-head {
   display: flex;
@@ -133,4 +126,44 @@ popup-wrap
 }
 .popup-wrap .popup.opened-layer {
   transform: translateX(0);
+}
+
+.popup-content {
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.popup-close:hover {
+  color: #666;
+}
+
+.popup-body {
+  padding: 20px;
+}
+
+.pop-tit {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 사이드 팝업 스타일 */
+.popup-side {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+  max-width: 400px;
 }/*# sourceMappingURL=popup.css.map */

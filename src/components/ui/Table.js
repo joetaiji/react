@@ -6,7 +6,7 @@ import { tableColumns, tableRows } from '../../constants/tableData';
 import './Datepicker.css';
 import './Table.css';
 
-const Table = () => {
+const Table = ({ onPopupClick }) => {
   const [activeLayer, setActiveLayer] = useState(null);
   const [dates, setDates] = useState({});
 
@@ -81,7 +81,11 @@ const Table = () => {
                 </td>
                 <td>
                   <span data-layer="projectItem" contentEditable>{row.project}</span>
-                  <button className="btn xsm btn-popup-view" data-id="project-create">
+                  <button 
+                    className="btn xsm btn-popup-view" 
+                    data-id="project-create"
+                    onClick={onPopupClick}
+                  >
                     <i className="ri-search-2-line"></i>상세보기
                   </button>
                 </td>

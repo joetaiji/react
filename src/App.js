@@ -140,7 +140,6 @@ const AppContent = () => {
 						</Suspense>
 
 						<Footer />
-						<Popup />
 					</div>
 				</div>	
 			</main>

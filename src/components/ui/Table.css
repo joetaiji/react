@@ -703,7 +703,6 @@ tr:hover > .row-btn-control .user-group {
 .table-container {
   position: relative;
   width: 100%;
-  overflow-x: auto;
 }
 
 .table {
